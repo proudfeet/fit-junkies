@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328185301) do
+ActiveRecord::Schema.define(version: 20150328170344) do
 
   create_table "activities", force: :cascade do |t|
-    t.string   "sets"
-    t.string   "repetition"
+    t.integer  "sets"
+    t.integer  "repetition"
     t.boolean  "other"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
   end
 
 end

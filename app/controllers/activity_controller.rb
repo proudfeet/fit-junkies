@@ -1,7 +1,5 @@
 class ActivityController < ApplicationController
   def index
-  end
-
-  def show
+  	@activities = Activity.all
   end
 end
