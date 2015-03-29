@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 1
+  thigh: 1
+  waist: 1
+  chest: 1
+  upperarm: 1
+  notes: MyText
+
+two:
+  weight: 1
+  thigh: 1
+  waist: 1
+  chest: 1
+  upperarm: 1
+  notes: MyText
