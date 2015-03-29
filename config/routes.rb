@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :workouts
+
   resources :entries
 
   get 'pages/home'
