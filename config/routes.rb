@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'pages/index'
+
+  get 'pages/show'
+
+  get 'home/index'
+
   devise_for :users
   root 'activity#index'
 
