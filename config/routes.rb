@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
+  resources :workouts
 
-  get 'pages/show'
+  resources :entries
 
-  get 'home/index'
+  get 'pages/home'
 
-  devise_for :users
-  # root 'activity#index'
-
-  root 'pages#index'
+  root 'activity#index'
 
   resources :activity
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

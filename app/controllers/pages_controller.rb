@@ -1,7 +1,4 @@
 class PagesController < ApplicationController
-  def index
-  end
-
-  def show
+  def home
   end
 end
