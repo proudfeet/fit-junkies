@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @entry.weight %>
+</p>
+
+<p>
+  <strong>Thigh:</strong>
+  <%= @entry.thigh %>
+</p>
+
+<p>
+  <strong>Waist:</strong>
+  <%= @entry.waist %>
+</p>
+
+<p>
+  <strong>Chest:</strong>
+  <%= @entry.chest %>
+</p>
+
+<p>
+  <strong>Upperarm:</strong>
+  <%= @entry.upperarm %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @entry.notes %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

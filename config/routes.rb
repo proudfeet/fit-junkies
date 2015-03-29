@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :entries
+
   get 'pages/home'
 
   root 'activity#index'
