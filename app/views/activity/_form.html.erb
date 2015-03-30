@@ -1,0 +1,18 @@
+<%= form_tag("/activity", method: "POST") do %>
+  <div>
+    <%= label_tag(:name, "Exercise name") %>
+    <%= text_field_tag(:name) %>
+  </div>
+  <div>  
+    <%= label_tag(:sets, "Number of sets") %>
+    <%= text_field_tag(:sets) %>
+  </div>
+  <div>
+    <%= label_tag(:repetition, "Number of repetitions") %>
+    <%= text_field_tag(:repetition) %>
+  </div>
+  <div>
+    <%= label_tag(:other, "Other?") %>
+  </div>
+  <%= submit_tag("Submit") %>
+<% end %>
