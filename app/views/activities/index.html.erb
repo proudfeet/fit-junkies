@@ -3,6 +3,8 @@
 	<p><%= activity.sets %></p>
 	<p><%= activity.repetition %></p>
 	<p><%= activity.other %></p>
+	<p><a href="/activities/<%= activity.id %>/edit">Edit</a></p>
 <% end %>
-
-<%= link_to "New", new_activity_path, class: "new-link", title: "New" %>
+<div>	
+	<%= link_to "New", new_activity_path, class: "new-link", title: "New" %>
+</div>
