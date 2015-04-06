@@ -5,5 +5,5 @@ class ApplicationController < ActionController::Base
 
   # Devise - force the user to redirect to the login page if the user was not logged in
   # TODO - comment out the line below for the root page login
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 end
