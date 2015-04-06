@@ -1,29 +1,29 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="row">
-        <div class="col-xs-6">
-          <%= link_to 'Fit Junkies', root_path, class: 'logo navbar-brand', title: 'Fit Junkies' %>
-        </div>
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+<header class="header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+          <%= link_to 'Fit Junkies', root_path, class: 'logo navbar-brand navbar-left', title: 'Fit Junkies' %>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
 
-        <div class="container-fluid">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><%= link_to "Workouts", workouts_path %></li>
-            <li class=""><%= link_to "Workouts", workouts_path %></li>
-            <% if user_signed_in? %>
-              <li><a href="#">Edit Profile</a></li>
-            <% else %>
-              <li><a href="#">Sign In</a></li>
-            <% end %>
-          </ul>
+          <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><%= link_to "Workouts", workouts_path %></li>
+              <li class=""><%= link_to "Workouts", workouts_path %></li>
+              <% if user_signed_in? %>
+                <li><a href="#">Edit Profile</a></li>
+              <% else %>
+                <li><a href="#">Sign In</a></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
