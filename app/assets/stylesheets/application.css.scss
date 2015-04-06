@@ -10,6 +10,52 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+ // Normalize
+ // @import "globals/normalize";
+
+ // Bourbon
+ // @import "bourbon";
+ // @import "neat";
+ // Susy & Compass
+ // @import "susy";
+ // @import "compass";
+
+//Boostrap
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ @import "scaffolds";
+
+ // Variables
+ @import "globals/variables";
+ @import "globals/mixins";
+ // @import "globals/placeholders";
+ @import "globals/utilities";
+ @import "globals/forms";
+ @import "globals/fonts";
+
+
+ // Base
+ // @import "globals/grid";
+ // @import "globals/icons";
+ // @import "globals/images";
+ // @import "globals/sprites";
+ // @import "globals/typography";
+ // @import "globals/loaders";
+
+ // Vendors
+ // @import "vendors/*";
+
+ // Components
+ @import "components/*";
+ // @import "shared/*";
+ // @import "pages/*";
+
+ // Plugins
+ // @import "globals/plugins";
+
+ // Fixes
+ // @import "components/fixes";

@@ -29,8 +29,9 @@ Please feel free to use a different markup language if you do not plan to run
 
 Setup
 
-bundle install
-rails s
+`bundle install`
+`rake db:migrate`
+`rails s`
 
 Using Lightning Fast Sass Reloading in Rails with `guard -p livereload`
 You can read more about it [here](https://mattbrictson.com/lightning-fast-sass-reloading-in-rails)

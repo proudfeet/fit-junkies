@@ -1,13 +1,23 @@
-<ul class="nav">
-  <li class="active"><a href="/ideas">Ideas</a></li>
-</ul>
-
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+          <%= link_to 'Fit Junkies', root_path, class: 'logo navbar-brand', title: 'Fit Junkies' %>
+        </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="col-xs-6">
+          <ul class="nav navbar-collapse collapse navbar-right">
+            <li class="active"><%= link_to "Workouts", workouts_path %></li>
+            <li class=""><%= link_to "Workouts", workouts_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

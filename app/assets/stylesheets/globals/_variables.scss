@@ -1,0 +1,85 @@
+//
+// Variables
+// -------------------------------------
+
+// {size} denotes a square element
+// {height} denotes the height of a rectangular element
+// {width} denotes the width of a rectangular element
+
+
+//
+// Terminology
+// -------------------------------------
+
+$terminology-size:   "xs" "sm" "md" "lg" "xl";
+
+//
+// Colour palette
+// -------------------------------------
+$type-dark:   #747474;
+$type:        #999999;
+$type-light:  #b2b2b2;
+
+//
+// Selected colours
+// -------------------------------------
+
+$base-dark:   #747474;
+$base:        #999999;
+$base-light:  #b2b2b2;
+
+
+$social-facebook:  #3a5a97;
+$social-google:    #eb4619;
+$social-twitch:    #6541a5;
+$social-twitter:   #4aaad0;
+
+$link:             $base;
+$link-hover:       $base-dark;
+// $link-border:      1px solid $pink-light;
+
+
+//
+// Fonts
+// -------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300|Quattrocento:400,700);
+
+$arial:               Arial, Helvetica, sans-serif;
+
+$font-primary:        "Oswald", $arial;
+$font-secondary:      "Quattrocento", serif, $arial;
+
+$font-size-1:          2rem;
+$font-size-2:       1.85rem;
+$font-size-3:        1.7rem;
+$font-size-4:       1.55rem;
+$font-size-5:        1.4rem;
+$font-size-6:       1.25rem;
+
+$font-size-xl:      2.55rem; // TODO: spread out a bit
+$font-size-lg:      2.45rem;
+$font-size-md:         1rem;
+$font-size-sm:        .8rem;
+$font-size-xs:        .7rem;
+
+$font-size-base:          17px !default;
+$font-size-large:         22px !default; // ~18px
+$font-size-small:         12px !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            1.067em !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.47 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+// Animations
+
+$transition: 0.36s;
