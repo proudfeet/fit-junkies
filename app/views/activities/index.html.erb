@@ -1,9 +1,12 @@
 <%= @activities.each do |activity| %>
-	<p><%= activity.name %></p>
-	<p><%= activity.sets %></p>
-	<p><%= activity.repetition %></p>
-	<p><%= activity.other %></p>
-	<p><a href="/activities/<%= activity.id %>/edit">Edit</a></p>
+	<div class="activity-item">
+		<p><%= activity.name %></p>
+		<p><%= activity.sets %></p>
+		<p><%= activity.repetition %></p>
+		<p><%= activity.other %></p>
+		<p><%= link_to "Edit", edit_activity_path(activity) %></p>
+		<p><%= link_to "Delete", activity_path(activity), method: :delete %></p>	
+	</div>
 <% end %>
 <div>	
 	<%= link_to "New", new_activity_path, class: "new-link", title: "New" %>
