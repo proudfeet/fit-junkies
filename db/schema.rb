@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20150329162357) do
 
+
+
   create_table "activities", force: :cascade do |t|
+  # TODO add weights:boolean if weights show sets/reps if not show time/distance
     t.integer  "sets"
     t.integer  "repetition"
     t.boolean  "other"
