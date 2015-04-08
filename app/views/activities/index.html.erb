@@ -1,9 +1,6 @@
 <%= @activities.each do |activity| %>
 	<div class="activity-item">
 		<p><%= activity.name %></p>
-		<p><%= activity.sets %></p>
-		<p><%= activity.repetition %></p>
-		<p><%= activity.other %></p>
 		<p><%= link_to "Edit", edit_activity_path(activity) %></p>
 		<p><%= link_to "Delete", activity_path(activity), method: :delete %></p>	
 	</div>

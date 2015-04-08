@@ -16,16 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :sets %><br>
-    <%= f.text_field :sets %>
-  </div>
-  <div class="field">
-    <%= f.label :repetition %>
-    <%= f.text_field :repetition %>
-  </div>
-  <div class="field">
-    <%= f.label :other %>
-    <%= f.check_box :other %>
+    <%= f.label :type %>
+    <%=  %>
+    <%= select_tag(
+        "activity_type", 
+        options_for_select([
+          ['Aerobic', 'aerobic'], 
+          ['Anaerobic', 'anaerobic']
+        ])
+      ) %>
   </div>
   <div class="actions">
   <%= f.submit :class => 'btn btn-default' %>
