@@ -11,15 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329162357) do
-
-
+ActiveRecord::Schema.define(version: 20150408031725) do
 
   create_table "activities", force: :cascade do |t|
-  # TODO add weights:boolean if weights show sets/reps if not show time/distance
     t.integer  "sets"
     t.integer  "repetition"
-    t.boolean  "other"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
