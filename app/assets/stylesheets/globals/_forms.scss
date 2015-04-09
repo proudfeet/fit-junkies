@@ -10,6 +10,7 @@ $checkbox-size:                 1rem;
 
 #{$all-text-inputs} {
   border: 1px solid $secondary;
+  width: 100%;
 }
 
 #{$all-text-inputs-focus},
