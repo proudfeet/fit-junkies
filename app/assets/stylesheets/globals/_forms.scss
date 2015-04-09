@@ -1,3 +1,13 @@
+//
+// Variables
+// --------------------------------------
+
+$checkbox-size:                 1rem;
+
+//
+// Base Styles
+// --------------------------------------
+
 #{$all-text-inputs} {
   border: 1px solid $secondary;
 }
@@ -6,4 +16,434 @@
 #{$all-text-inputs-hover},
 #{$all-text-inputs-active} {
   border: 1px solid $primary;
+}
+
+fieldset {
+  border: 0;
+  margin-bottom: .75rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+label {
+  color: $type-light;
+  display: inline-block;
+  margin-bottom: .25rem;
+  max-width: 100%;
+}
+
+input {
+  border: 1px solid transparent;
+  outline: none;
+  line-height: 1.4rem;
+  padding: .25rem .5rem;
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $primary;
+  }
+
+  // pass through pointer event
+  &[type="checkbox"] {
+    [data-toggle="select"] & {
+      pointer-events: none;
+    }
+  }
+}
+
+textarea {
+  display: block;
+  max-height: 20rem;
+  max-width: 42rem;
+  width: 100%;
+  padding: .25rem .5rem;
+}
+
+select {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: $primary;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+legend {
+  color: $type;
+  margin-bottom: .25rem;
+}
+
+input[type='file'] {
+  color: transparent;
+  border: none;
+}
+
+
+//
+// Base styles
+// ----------------------------------
+
+.form {
+  @extend %clearfix;
+  margin-bottom: 1rem;
+}
+
+.form-select {
+  background-color: $type-light;
+  border: 1px solid $primary;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  position: relative;
+  outline: 0;
+  transition: all $transition ease;
+
+  &:before {
+    background-color: $type-light;
+    background-image: image-url('down-blue.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    bottom: 0;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2em;
+    transition: all $transition ease;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      background-color: $primary;
+    }
+  }
+}
+
+
+//
+// Base field
+// ----------------------------------
+
+.field {
+  display: block;
+  margin-bottom: .75rem;
+}
+
+.field-label {
+
+  // if the label has an icon
+  .icon {
+    float: left;
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+}
+
+.field-control {
+  display: block;
+  height: 2rem;
+  max-width: 100%;
+  padding: .25rem .5rem;
+
+  // @include at-breakpoint($bp-sm-minus) {
+  //   max-width: 296px;
+  // }
+}
+
+.field-block,
+.field-description {
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}
+
+.help-block {
+  font-size: .9rem;
+  font-style: italic;
+  margin-top: .5rem;
+  opacity: .7;
+}
+
+
+//
+// Field groups
+// ----------------------------------
+
+.fields {
+}
+
+.fields-inline {
+  margin-bottom: 0;
+
+  .field {
+    float: left;
+    margin-right: .75rem;
+  }
+}
+
+
+//
+// Class variations
+// ----------------------------------
+
+.field-inline {
+  .field-label {
+    margin-bottom: 0;
+    margin-right: .5rem;
+  }
+
+  .field-control {
+    display: inline-block;
+  }
+
+  .field-label,
+  .field-control {
+    vertical-align: middle;
+  }
+}
+
+
+//
+// Select
+// ----------------------------------
+
+.select {
+  background-color: $primary;
+  display: block;
+  height: 2rem;
+  max-width: 24rem;
+  position: relative;
+  vertical-align: middle;
+
+  select {
+    color: $primary  ;
+    font-family: $font-primary;
+    height: 1.9rem;
+    margin-top: .1rem; // to center the text
+    margin-right: 2rem; // for the icon
+    width: 100%;
+  }
+
+  &:after {
+    background: $type-light url('hamburger.svg') no-repeat center .45rem;
+    background-size: 1rem 1rem;
+    bottom: 0;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2rem;
+  }
+
+  &:hover {
+    &:after {
+      background-color: $primary;
+    }
+  }
+
+  // @include at-breakpoint($breakpoint-xs) {
+  //   + .select {
+  //     margin-top: .25rem;
+  //   }
+  // }
+
+  // @include at-breakpoint($breakpoint-sm) {
+  //   display: inline-block;
+  // }
+}
+
+
+//
+// Checkbox + radio
+// ----------------------------------
+
+.checkbox,
+.radio {
+  > label {
+    margin-bottom: 0;
+
+    &:before {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: .6rem .6rem;
+      border: 1px solid $base;
+      content: '';
+      display: inline-block;
+      height: $checkbox-size;
+      margin-right: .5em;
+      vertical-align: middle;
+      width: $checkbox-size;
+    }
+  }
+
+  &:hover {
+    > label {
+      &:before {
+        border-color: $primary;
+      }
+    }
+  }
+
+  & + & {
+    // @include at-breakpoint($bp-lg-minus) {
+    //   margin-top: .5rem;
+    // }
+  }
+}
+
+.checkbox {
+  > input[type="checkbox"] {
+    display: block;
+    height: 25px;
+    opacity: 0;
+    position: absolute;
+    width: 25px;
+
+    &:disabled {
+      + label {
+        &:before {
+          border-color: $secondary;
+        }
+      }
+    }
+
+    &:checked {
+      + label {
+        &:before {
+          background-color: $primary;
+          background-image: image-url('checkmark.svg');
+          border-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.radio {
+  > input[type="radio"] {
+    display: none;
+
+    &:checked {
+      + label {
+        &:before {
+          background-color: $primary;
+          background-image: image-url('checkmark.svg');
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  > label {
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}
+
+
+//
+// File upload
+// ----------------------------------
+
+input[type="file"] {
+  .action & {
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    max-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.fileupload {
+  margin-right: 1rem;
+  position: relative;
+}
+
+.fileupload-current {
+  margin-bottom: .5rem;
+}
+
+.fileupload-preview {
+  left: 0;
+  max-height: 100%;
+  max-width: 100%;
+  padding: .25rem;
+  position: absolute;
+  top: 0;
+}
+
+.fileupload-actions {
+  .action {
+    margin-bottom: .25rem;
+    margin-left: 0;
+    padding-right: .75rem;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+      background-size: 0rem 100%;
+    }
+
+    &:after {
+      content: normal;
+    }
+  }
+}
+
+.fileupload-new .fileupload-exists,
+.fileupload-exists .fileupload-new,
+.fileupload-exists .filedupload-cancel {
+  display: none;
+}
+
+//
+// Component variations
+// ----------------------------------
+
+// Focus color green
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input,
+.form-select {
+  transition: box-shadow 0.36s ease;
+  &:focus,
+  &:hover {
+    border-color: 1px solid $primary;
+    outline: 0 none;
+  }
+}
+
+.action-file {
+    display: block;
+    background-color: $primary;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary, 10);
+  }
 }

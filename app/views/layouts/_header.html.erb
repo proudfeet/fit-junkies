@@ -21,7 +21,7 @@
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
         </li>
         <li><%= link_to "New Workout", new_workouts_path, class: 'active' %></li>
-        Logged in as <strong><%= current_user.email %></strong>.
+        <li class="logged-in">Logged in as <strong><%= current_user.name %></strong></li>
       <% else %>
         <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
         <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
