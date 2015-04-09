@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FitJunkies</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="inner-wrapper">
+    <aside class="sidebar-container">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/footer' %>
+    </aside>
+
+    <div class="home-wrapper">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

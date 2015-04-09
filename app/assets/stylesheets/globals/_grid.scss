@@ -11,18 +11,24 @@ $nav-padding: 2.5rem 2.5rem 2.5rem 3.5rem;
   @include row(table);
 }
 
-.content-wrapper {
+.content-wrapper,
+.home-wrapper {
   @include span-columns(9);
+}
+
+.home-wrapper {
   @include reset-display;
   // @include pad();
   // margin-left: 0;
 }
 
+.content-wrapper {
+  @include pad();
+}
+
 .sidebar-container {
   position: fixed;
   @include span-columns(3);
-  // @include pad();
-  // margin-right: 0;
   @include linear-gradient(to right, $primary, $primary, $primary, rgba($secondary, 0.4));
 }
 

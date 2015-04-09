@@ -1,13 +1,4 @@
-.logo {
-  text-transform: uppercase;
-  text-align: center;
 
-  &:hover {
-    color: white;
-    background-color: rgba($secondary, 0.5);
-    text-decoration: none;
-  }
-}
 
 .header {
   // @include outer-container;
@@ -44,5 +35,17 @@
 
   a {
     padding: $nav-padding !important;
+  }
+}
+
+.logo {
+  text-transform: uppercase;
+  text-align: center;
+
+
+  &:hover {
+    color: white;
+    background-color: rgba($secondary, 0.5);
+    text-decoration: none;
   }
 }

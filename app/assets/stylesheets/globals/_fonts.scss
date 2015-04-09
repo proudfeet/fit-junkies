@@ -89,10 +89,16 @@ a {
   &:hover {
     color: $link-hover;
     border-color: transparent;
+    text-decoration: none;
+    background-color: transparent;
 
     svg {
       fill: $link-hover;
     }
+  }
+
+  &:visited {
+    color: $link-visited;
   }
 }
 
@@ -107,7 +113,7 @@ img {
 
 ::selection,
 ::-moz-selection {
-  // background-color: $pink-light;
-  color: white;
+  background-color: $primary;
+  color: $secondary;
 }
 

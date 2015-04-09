@@ -16,14 +16,17 @@ $terminology-size:   "xs" "sm" "md" "lg" "xl";
 //
 // Colour palette
 // -------------------------------------
-$type-dark:   #747474;
-$type:        #999999;
-$type-light:  #b2b2b2;
-
 $teal:        #32dac4;
 $grey:        #3d4e5a;
 $dark-grey:   #303e48;
 
+$primary:         $teal;
+$secondary:       $dark-grey;
+$secondary-light: $grey;
+
+$type-dark:   $secondary;
+$type:        $secondary-light;
+$type-light:  $secondary-light;
 //
 // Selected colours
 // -------------------------------------
@@ -32,9 +35,7 @@ $base-dark:   #747474;
 $base:        $dark-grey;
 $base-light:  #b2b2b2;
 
-$primary:         $teal;
-$secondary:       $dark-grey;
-$secondary-light: $grey;
+
 
 
 $social-facebook:  #3a5a97;
@@ -44,6 +45,7 @@ $social-twitter:   #4aaad0;
 
 $link:             $base;
 $link-hover:       lighten($base, 20%);
+$link-visited:     $secondary-light;
 $link-border:      1px solid $teal;
 
 $link-nav:         $secondary;

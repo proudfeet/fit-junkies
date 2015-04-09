@@ -1,0 +1,9 @@
+#{$all-text-inputs} {
+  border: 1px solid $secondary;
+}
+
+#{$all-text-inputs-focus},
+#{$all-text-inputs-hover},
+#{$all-text-inputs-active} {
+  border: 1px solid $primary;
+}
