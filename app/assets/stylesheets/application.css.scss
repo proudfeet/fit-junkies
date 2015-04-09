@@ -12,12 +12,15 @@
  *
  *= require_self
  */
+ // @import "boubon";
 
  // Normalize
  // @import "globals/normalize";
 
  // Bourbon
- // @import "bourbon";
+ @import "bourbon";
+ @import "neat";
+
  // @import "neat";
  // Susy & Compass
  // @import "susy";
@@ -27,13 +30,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ //Bourbon
+
  @import "scaffolds";
 
  // Variables
  @import "globals/variables";
  @import "globals/mixins";
- // @import "globals/placeholders";
  @import "globals/utilities";
+ @import "globals/grid";
  @import "globals/forms";
  @import "globals/fonts";
 
@@ -52,7 +57,7 @@
  // Components
  @import "components/*";
  // @import "shared/*";
- // @import "pages/*";
+ @import "pages/*";
 
  // Plugins
  // @import "globals/plugins";
