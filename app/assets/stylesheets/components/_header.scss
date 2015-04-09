@@ -1,12 +1,48 @@
 .logo {
   text-transform: uppercase;
-  font-family: $font-primary;
+  text-align: center;
+
+  &:hover {
+    color: white;
+    background-color: rgba($secondary, 0.5);
+    text-decoration: none;
+  }
 }
 
-.nav {
-  font-size: $font-size-5;
+.header {
+  // @include outer-container;
+}
+
+.header,
+.footer {
+  // height: 100vh;
+  // position: fixed;
+  // background-color: $teal;
+}
+
+// .nav-side {
+//   width: 30%;
+// }
+
+.nav,
+.sidebar {
+  font-size: $font-size-2;
+  font-family: $font-primary;
+  text-transform: uppercase;
 
   li {
-    display: inline-block;
+    border-bottom: 1px solid rgba($secondary-light, 0.2);
+    border-top: 1px solid rgba($secondary, 0.2);
+
+    .active,
+    a:hover {
+      color: white;
+      font-weight: bold;
+      background-color: rgba($secondary, 0.5);
+    }
+  }
+
+  a {
+    padding: $nav-padding !important;
   }
 }

@@ -20,13 +20,21 @@ $type-dark:   #747474;
 $type:        #999999;
 $type-light:  #b2b2b2;
 
+$teal:        #32dac4;
+$grey:        #3d4e5a;
+$dark-grey:   #303e48;
+
 //
 // Selected colours
 // -------------------------------------
 
 $base-dark:   #747474;
-$base:        #999999;
+$base:        $dark-grey;
 $base-light:  #b2b2b2;
+
+$primary:         $teal;
+$secondary:       $dark-grey;
+$secondary-light: $grey;
 
 
 $social-facebook:  #3a5a97;
@@ -35,8 +43,17 @@ $social-twitch:    #6541a5;
 $social-twitter:   #4aaad0;
 
 $link:             $base;
-$link-hover:       $base-dark;
-// $link-border:      1px solid $pink-light;
+$link-hover:       lighten($base, 20%);
+$link-border:      1px solid $teal;
+
+$link-nav:         $secondary;
+
+$body-color:       lighten($secondary, 70%);
+
+
+//
+// Selected colours
+// -------------------------------------
 
 
 //
@@ -57,13 +74,13 @@ $font-size-4:       1.55rem;
 $font-size-5:        1.4rem;
 $font-size-6:       1.25rem;
 
-$font-size-xl:      2.55rem; // TODO: spread out a bit
+$font-size-xl:      4rem; // TODO: spread out a bit
 $font-size-lg:      2.45rem;
 $font-size-md:         1rem;
 $font-size-sm:        .8rem;
 $font-size-xs:        .7rem;
 
-$font-size-base:          17px !default;
+$font-size-base:          16px !default;
 $font-size-large:         22px !default; // ~18px
 $font-size-small:         12px !default; // ~12px
 

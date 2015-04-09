@@ -1,0 +1,71 @@
+.home-item {
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("barweight.jpg"));
+  background-size: cover;
+  background-position: top center;
+  @include pad(default);
+  border-bottom: 1.5rem solid $body-color;
+}
+
+
+.masonry {
+  @include display(flex);
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  height: 100vw;
+  font-size: 0;
+}
+
+.home-row {
+  height: 50vh;
+  display: block;
+}
+
+.home-item-1 {
+  @include span-columns(4 of 9);
+  height: 50vh;
+}
+
+.home-item-2,
+.home-item-3 {
+  @include span-columns(4 of 9);
+  height: 25vh;
+}
+
+.home-item-4,
+.home-item-5,
+.home-item-6 {
+  @include span-columns(3 of 9);
+  height: 50vh;
+}
+
+.home-item-6 {
+  background-image: none;
+  color: $secondary;
+  @include pad(default default default 0);
+
+  h2,
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+.intro-text {
+  font-size: $font-size-3;
+}
+
+.home-item-2 {
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("skip-rope.jpg"));
+}
+
+.home-item-3 {
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("kettle-bell-one.jpg"));
+}
+
+.home-item-4 {
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("kettle-bell-one.jpg"));
+}
+
+.home-item-5 {
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("mixed-weights.jpg"));
+}
+

@@ -1,0 +1,66 @@
+$nav-padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+
+.wrapper {
+  height: 100vh;
+  @include outer-container;
+  max-width: 100%;
+}
+
+.inner-wrapper {
+  @include fill-parent();
+  @include row(table);
+}
+
+.content-wrapper {
+  @include span-columns(9);
+  @include reset-display;
+  // @include pad();
+  // margin-left: 0;
+}
+
+.sidebar-container {
+  position: fixed;
+  @include span-columns(3);
+  // @include pad();
+  // margin-right: 0;
+  @include linear-gradient(to right, $primary, $primary, $primary, rgba($secondary, 0.4));
+}
+
+.home-row {
+}
+
+.home-row {
+  height: 50vh;
+}
+
+
+.sidebar {
+  // @include pad(default);
+}
+
+.footer {
+  background-color: $secondary;
+  color: white;
+  height: 10vh;
+  padding: $nav-padding;
+  // max-height: 75px;
+}
+
+.header {
+}
+
+.nav {
+  height: 90vh;
+  @include align-content(flex-start);
+  @include display(flex);
+  @include flex-direction(column);
+  // @include justify-content(flex-start);
+
+  a {
+    @include pad(default);
+  }
+}
+
+.wrapper {
+
+}

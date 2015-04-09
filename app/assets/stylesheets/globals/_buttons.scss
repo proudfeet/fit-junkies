@@ -1,4 +1,22 @@
+button,
+input[type="submit"] {
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  background: none;
+  border: 0;
+  color: $type-light;
+  line-height: 1.5;
+  padding: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
 .btn {
+
   &:hover {
     transition: all $transition ease;
   }

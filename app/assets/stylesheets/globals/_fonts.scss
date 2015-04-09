@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   line-height: $line-height-base;
+  background-color: $body-color;
 }
 
 svg {
@@ -56,12 +57,17 @@ h6,
   font-size: $font-size-h6;
 }
 
+.logo {
+  font-size: $font-size-xl;
+}
+
 p,
 ol,
 ul {
   margin-top: 0;
   font-size: $font-size-md;
   line-height: $line-height-computed;
+  font-family: $font-secondary;
 }
 
 ul {
@@ -70,7 +76,7 @@ ul {
 }
 
 a {
-  // border-bottom: $link-border;
+  border-bottom: $link-border;
   color: $link;
   text-decoration: none;
   transition: all $transition ease;
@@ -87,23 +93,6 @@ a {
     svg {
       fill: $link-hover;
     }
-  }
-}
-
-button,
-input[type="submit"] {
-  -webkit-font-smoothing: antialiased;
-}
-
-button {
-  background: none;
-  border: 0;
-  color: $type-light;
-  line-height: 1.5;
-  padding: 0;
-
-  &:focus {
-    outline: 0;
   }
 }
 
