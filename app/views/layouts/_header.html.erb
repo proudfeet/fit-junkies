@@ -12,6 +12,7 @@
     <ul class="nav">
       <li><%= link_to "Workouts", workouts_path, class: 'active' %></li>
       <li class=""><%= link_to "Workouts", workouts_path %></li>
+      <li class=""><%= link_to "Contact", workouts_path %></li>
       <% if user_signed_in? %>
         <li>
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |

@@ -15,7 +15,10 @@ button {
   }
 }
 
-.btn {
+.btn,
+.btn-default {
+  background-color: $secondary;
+  color: white;
 
   &:hover {
     transition: all $transition ease;
