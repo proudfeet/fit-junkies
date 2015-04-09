@@ -18,10 +18,15 @@
   <div class="field">
     <%= f.label :type %>
     <%= select_tag(
-        "activity_type", 
+        "activity_type",
         options_for_select([
-          ['Aerobic', 'aerobic'], 
-          ['Anaerobic', 'anaerobic']
+          ['Aerobic', 'aerobic'],
+          ['Anaerobic', 'anaerobic'],
+          ['Interval', 'interval'],
+          ['Momentum', 'momentum'],
+          ['Durability', 'durability'],
+          ['Weights', 'weights'],
+          ['Kettle Bells', 'kettle-bells']
         ])
       ) %>
   </div>
