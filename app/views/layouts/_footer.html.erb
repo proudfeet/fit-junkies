@@ -1,5 +1,9 @@
 <footer class="footer">
   <div class="sidebar">
-    <p class="copyright">FitJunkies Copyright &copy; 2015</p>
+    <p class="copyright">FitJunkies &copy; 2015 <br>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>
+      <% end %>
+    </p>
   </div>
 </footer>
