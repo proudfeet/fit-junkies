@@ -12,25 +12,47 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Activity Name" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :type %>
-    <%= select_tag(
-        "activity_type",
-        options_for_select([
-          ['Aerobic', 'aerobic'],
-          ['Anaerobic', 'anaerobic'],
-          ['Interval', 'interval'],
-          ['Momentum', 'momentum'],
-          ['Durability', 'durability'],
-          ['Weights', 'weights'],
-          ['Kettle Bells', 'kettle-bells']
-        ])
-      ) %>
+    <%= f.label :activity_type, :class => 'field-label' %>
+    <div class="form-select">
+      <%= select_tag(
+          "activity_type",
+          options_for_select([
+            ['Aerobic', 'aerobic'],
+            ['Interval', 'interval'],
+            ['Anaerobic', 'anaerobic'],
+            ['Momentum', 'momentum'],
+            ['Durability', 'durability'],
+            ['Weights', 'weights'],
+            ['Distance', 'distance'],
+            ['Kettle Bells', 'kettle-bells']
+          ])
+        ) %>
+    </div>
   </div>
+
+    <div class="field">
+      <%= f.label :distance %><br>
+      <%= f.text_field :distance %>
+    </div>
+    <div class="field">
+      <%= f.label :sets %><br>
+      <%= f.text_field :sets %>
+    </div>
+    <div class="field">
+      <%= f.label :repetition %><br>
+      <%= f.text_field :repetition %>
+    </div>
+
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+
   <div class="actions">
-  <%= f.submit :class => 'btn btn-default' %>
+   <%= f.submit :class => 'btn btn-default' %>
   </div>
 <% end %>
