@@ -15,7 +15,20 @@ class WorkoutsController < ApplicationController
   # GET /workouts/new
   def new
     @workout = Workout.new
+    @workout.activities.build # create a new activity on the workout
+
   end
+
+
+  # def create
+  #   @workout = Workout.new(params[:workout])
+  #   @activity = @workout.activities.build(params[:activity])
+  #   if @workout.save
+  #     redirect_to :action => 'index'
+  #   else
+  #     render :action => 'new'
+  #   end
+  # end
 
   # GET /workouts/1/edit
   def edit
