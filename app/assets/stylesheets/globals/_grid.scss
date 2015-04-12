@@ -1,9 +1,19 @@
-$nav-padding: 2.5rem 2.5rem 2.5rem 3.5rem;
-
 .wrapper {
   height: 100vh;
   @include outer-container;
   max-width: 100%;
+}
+
+@include media($tablet) {
+  body {
+      background: purple;
+  }
+}
+
+.content-wrapper,
+.home-wrapper,
+.sidebar-container {
+  overflow: hidden;
 }
 
 .inner-wrapper {
@@ -70,3 +80,12 @@ $nav-padding: 2.5rem 2.5rem 2.5rem 3.5rem;
 .wrapper {
 
 }
+
+// @media #{$small} {
+//   .content-wrapper,
+//   .home-wrapper,
+//   .sidebar-content {
+//     width: 100%;
+//     @include span-columns(12 of 12);
+//   }
+// }

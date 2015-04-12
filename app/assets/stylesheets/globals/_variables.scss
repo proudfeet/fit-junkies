@@ -35,9 +35,6 @@ $base-dark:   #747474;
 $base:        $dark-grey;
 $base-light:  #b2b2b2;
 
-
-
-
 $social-facebook:  #3a5a97;
 $social-google:    #eb4619;
 $social-twitch:    #6541a5;
@@ -102,3 +99,20 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 // Animations
 
 $transition: 0.36s;
+
+$nav-padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+
+
+// Grid
+// Responsive breakpoints
+
+$mobile-size:em(320);
+$tablet-size:720px;
+$desktop-size:em(960);
+$largedesktop-size:em(1050);
+
+// Bourbon Neat Breakpoints
+$mobile: new-breakpoint(max-width $mobile-size 4);
+$tablet: new-breakpoint(max-width $tablet-size 8);
+$desktop: new-breakpoint(max-width $desktop-size 12);
+$largedesktop: new-breakpoint(min-width $largedesktop-size 16);
