@@ -81,11 +81,20 @@
 
 }
 
-// @media #{$small} {
-//   .content-wrapper,
-//   .home-wrapper,
-//   .sidebar-content {
-//     width: 100%;
-//     @include span-columns(12 of 12);
-//   }
-// }
+@include media($tablet) {
+  .content-wrapper,
+  .home-wrapper,
+  .sidebar-container {
+    @include span-columns(12);
+  }
+
+  .nav,
+  .home-row,
+  .footer {
+    position: default;
+  }
+
+  .header {
+
+  }
+}

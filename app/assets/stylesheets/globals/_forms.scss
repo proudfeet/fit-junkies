@@ -2,7 +2,8 @@
 // Variables
 // --------------------------------------
 
-$checkbox-size:                 1rem;
+$checkbox-size:           1rem;
+$field-background:        rgba($secondary, 0.5);
 
 //
 // Base Styles
@@ -11,6 +12,9 @@ $checkbox-size:                 1rem;
 #{$all-text-inputs} {
   border: 1px solid $secondary;
   width: 100%;
+  background-color: transparent;
+  color: $primary;
+  @include transition(all $transition ease);
 }
 
 #{$all-text-inputs-focus},
@@ -28,18 +32,17 @@ fieldset {
 }
 
 label {
-  color: $type-light;
+  color: $primary;
   display: inline-block;
   margin-bottom: .25rem;
   max-width: 100%;
 }
 
 input {
-  border: 1px solid transparent;
+  // border: 1px solid $secondary;
   outline: none;
   line-height: 1.4rem;
-  padding: .25rem .5rem;
-  color: $primary;
+  padding: .75rem;
 
   &:hover,
   &:focus {
@@ -60,6 +63,7 @@ textarea {
   max-width: 42rem;
   width: 100%;
   padding: .25rem .5rem;
+  resize: none;
 }
 
 select {
@@ -91,20 +95,26 @@ input[type='file'] {
 .form {
   @extend %clearfix;
   margin-bottom: 1rem;
+  @include span-columns(6);
+  // background-color: $field-background;
+  background-color: black;
+  @include pad(default);
+  color: $primary;
 }
 
 .form-select {
-  background-color: $type-light;
+  background-color: $secondary;
   border: 1px solid $primary;
   display: inline-block;
   padding: 0.25em 0.5em;
   position: relative;
   outline: 0;
+  min-width: 2rem;
   transition: all $transition ease;
 
   &:before {
-    background-color: $type-light;
-    background-image: image-url('down-blue.svg');
+    background-color: $primary;
+    background-image: image-url('down.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
@@ -122,7 +132,7 @@ input[type='file'] {
   &:hover,
   &:focus {
     &:before {
-      background-color: $primary;
+      background-color: $secondary;
     }
   }
 }
@@ -138,6 +148,7 @@ input[type='file'] {
 }
 
 .field-label {
+  display: block;
 
   // if the label has an icon
   .icon {

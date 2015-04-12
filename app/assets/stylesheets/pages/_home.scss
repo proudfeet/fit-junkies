@@ -1,3 +1,8 @@
+.home-wrapper {
+  background-color: $body-color;
+  // @include pad(0 default 0 0);
+}
+
 .home-item {
   @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("barweight.jpg"));
   background-size: cover;
@@ -13,7 +18,7 @@
   }
 }
 
-.home-item-content a {
+.home-item-content {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -23,24 +28,13 @@
   @include pad(default);
   display: none;
   // @include transform(translateY(100%));
-  // @include transition(all $transition ease-in-out);
+  @include transition(all $transition ease-in-out);
 
   &:hover {
-    @include opacity(0.9);
+    // @include opacity(0.9);
     // @include transform(translateY(0));
   }
 }
-
-
-
-
-// .masonry {
-//   @include display(flex);
-//   @include flex-direction(column);
-//   @include flex-wrap(wrap);
-//   height: 100vw;
-//   font-size: 0;
-// }
 
 .home-row {
   height: 50vh;
@@ -48,7 +42,7 @@
 }
 
 .home-item-1 {
-  @include span-columns(5 of 12);
+  @include span-columns(6 of 12);
   height: 50vh;
 }
 
@@ -56,6 +50,7 @@
 .home-item-3 {
   @include span-columns(6 of 12);
   height: 25vh;
+  margin-right: 0;
 }
 
 .home-item-4,
