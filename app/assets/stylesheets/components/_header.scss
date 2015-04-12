@@ -26,11 +26,12 @@
   text-align: center;
   border: 3px solid rgba($secondary, 0.5);
   margin: 3.5rem;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 2rem 3.5rem !important;
 
   &:hover {
     color: white;
     background-color: rgba($secondary, 0.5);
     text-decoration: none;
+    border-color: white;
   }
 }
