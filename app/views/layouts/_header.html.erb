@@ -10,18 +10,22 @@
     </div>
 
     <ul class="nav">
-      <li><%= link_to "Workouts", workouts_path, class: 'active' %></li>
+      <li>
+        <%= link_to "Workouts", workouts_path, class: 'active' %>
+      </li>
       <li class=""><%= link_to "Workouts", workouts_path %></li>
       <li class=""><%= link_to "Contact", workouts_path %></li>
       <% if user_signed_in? %>
         <li>
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to 'New Workout', new_workout_path %>
+        </li>
+        <li>
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
         </li>
         <li>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
         </li>
-        <li><%= link_to "New Workout", new_workouts_path, class: 'active' %></li>
-        <li class="logged-in">Logged in as <strong><%= current_user.name %></strong></li>
+        <!-- <li class="logged-in">Logged in as <strong><%= current_user.email %></strong></li> -->
       <% else %>
         <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
         <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
@@ -29,3 +33,4 @@
     </ul>
   </nav>
 </header>
+
