@@ -25,14 +25,28 @@
     <!-- TODO add in activity form fields to workout form
     use debugging to fix up-->
 
-  <div class="field">
-    <%= f.label :workout_id, "WorkoutID" %><br>
-    <%= f.text_field :workout_id, Workout.all, :id, :workout_name %>
-  </div>
-  <div class="field">
-    <%= f.label :activity_id %><br>
-    <%= f.text_field :activity_id, Activity.all, :id, :title %>
-  </div>
+ <div class="field">
+ <% activityList = [] %>
+ <% @activities.each do |activity| %>
+  <% activityList.push([activity.name, activity.activity_type) %>
+ <% end %>
+
+  <div class="form-select">
+      <%= select_tag(
+          "activity_type",
+          options_for_select([
+            ['activity.name', 'aerobic'],
+            ['Interval', 'interval'],
+            ['Anaerobic', 'anaerobic'],
+            ['Momentum', 'momentum'],
+            ['Durability', 'durability'],
+            ['Weights', 'weights'],
+            ['Distance', 'distance'],
+            ['Kettle Bells', 'kettle-bells']
+          ])
+        ) %>
+    </div>
+ </div>
 
   <div class="field">
     <%= f.label :notes %><br>
