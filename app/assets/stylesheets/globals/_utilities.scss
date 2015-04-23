@@ -1,0 +1,18 @@
+.body-background {
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("skip-rope.jpg"));
+}
+
+.content-half {
+  position: relative;
+  background-color: rgba(black, 0.5);
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(5px);
+  }
+}

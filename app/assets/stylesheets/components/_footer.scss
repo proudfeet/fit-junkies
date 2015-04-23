@@ -1,7 +1,12 @@
 .footer {
   color: $primary;
 
-  .copyright {
-    // font-size: $font-size-sm;
+  @include media($tablet) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 1.5rem 2.5rem .5rem;
+    height: auto;
   }
 }

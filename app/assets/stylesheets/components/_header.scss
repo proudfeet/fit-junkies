@@ -18,20 +18,64 @@
 }
 
 .nav li a {
-    padding: $nav-padding;
+  padding: $nav-padding;
 }
 
-.logo {
+
+.logo-junkie {
   text-transform: uppercase;
   text-align: center;
   border: 3px solid rgba($secondary, 0.5);
   margin: 3.5rem;
   padding: 2.5rem 2rem 3.5rem !important;
+  font-size: 3.5rem;
 
   &:hover {
     color: white;
     background-color: rgba($secondary, 0.5);
     text-decoration: none;
     border-color: white;
+  }
+}
+
+.icon-bar {
+  width: 5px;
+  height: 4px;
+  display: block;
+  background-color: white;
+}
+
+@include media($tablet) {
+  .sidebar-container {
+    position: relative;
+  }
+
+  .nav,
+  .home-row,
+  .footer {
+    position: default;
+  }
+
+  .header {
+
+  }
+
+  .nav,
+  .home-row {
+    height: auto;
+  }
+
+  .logo-junkie {
+    position: absolute;
+    left: 2.9rem;
+    width: 15%;
+    margin: .3rem;
+    font-size: 2rem;
+    padding: .25rem !important;
+    margin: 1rem;
+  }
+
+  .navbar-header {
+    margin-bottom: 1rem;
   }
 }

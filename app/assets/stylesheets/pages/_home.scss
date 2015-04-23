@@ -1,5 +1,6 @@
 .home-wrapper {
   background-color: $body-color;
+  @include pad(em(12));
   // @include pad(0 default 0 0);
 }
 
@@ -39,6 +40,7 @@
 .home-row {
   height: 50vh;
   @include span-columns(12);
+  @include omega();
 }
 
 .home-item-1 {
@@ -86,5 +88,24 @@
 
 .home-item-5 {
   @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("mixed-weights.jpg"));
+}
+
+@include media($tablet) {
+  .home-item {
+    display: none;
+  }
+
+  .home-row {
+    height: auto;
+  }
+
+  .home-item-6,
+  .home-item-1,
+  .home-item-2 {
+    display: block;
+    height: auto;
+    @include pad();
+    @include span-columns(8);
+  }
 }
 

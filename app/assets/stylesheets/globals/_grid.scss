@@ -2,11 +2,9 @@
   height: 100vh;
   @include outer-container;
   max-width: 100%;
-}
 
-@include media($tablet) {
-  body {
-      background: purple;
+  @include media($tablet) {
+    @include pad();
   }
 }
 
@@ -34,6 +32,16 @@
 
 .content-wrapper {
   @include pad();
+}
+
+.content-half {
+  @include span-columns(5);
+  @include shift(3);
+
+  @include media($tablet) {
+    @include span-columns(8);
+    @include shift(0);
+  }
 }
 
 .sidebar-container {
@@ -78,6 +86,7 @@
 }
 
 .wrapper {
+  position: relative;
 
 }
 
@@ -85,16 +94,6 @@
   .content-wrapper,
   .home-wrapper,
   .sidebar-container {
-    @include span-columns(12);
-  }
-
-  .nav,
-  .home-row,
-  .footer {
-    position: default;
-  }
-
-  .header {
-
+    @include span-columns(8);
   }
 }
