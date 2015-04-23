@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :workouts
+  resources :workouts do
+    resources :workout_activities
+  end
 
   resources :entries
 
   root 'pages#home'
 
   resources :activities
-  resources :workout_activities
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
