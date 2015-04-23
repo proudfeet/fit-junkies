@@ -12,3 +12,5 @@
 
 <%= link_to 'Edit', edit_workout_path(@workout) %> |
 <%= link_to 'Back', workouts_path %>
+<%= link_to 'Add some activities for this workout', new_workout_activity_path %>
+<!-- TODO: fix above path (nested routing?) to link to something like workout_activity/workoutId/new -->

@@ -1,27 +1,36 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>Date:</strong>
+  <% if @entry.created_at != @entry.updated_at %>
+    <%= @entry.updated_at %>
+    <!-- TODO: format timestamps for created_at and updated_at -->
+  <% else %>
+    <%= @entry.created_at %>
+  <% end %>
+</p>
 
 <p>
-  <strong>Weight:</strong>
+  <strong>Weight(lb):</strong>
   <%= @entry.weight %>
 </p>
 
 <p>
-  <strong>Thigh:</strong>
+  <strong>Thigh(cm):</strong>
   <%= @entry.thigh %>
 </p>
 
 <p>
-  <strong>Waist:</strong>
+  <strong>Waist(cm):</strong>
   <%= @entry.waist %>
 </p>
 
 <p>
-  <strong>Chest:</strong>
+  <strong>Chest(cm):</strong>
   <%= @entry.chest %>
 </p>
 
 <p>
-  <strong>Upperarm:</strong>
+  <strong>Upperarm(cm):</strong>
   <%= @entry.upperarm %>
 </p>
 

@@ -5,11 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Weight</th>
-      <th>Thigh</th>
-      <th>Waist</th>
-      <th>Chest</th>
-      <th>Upperarm</th>
+      <th>Date</th>
+      <th>Weight(cm)</th>
+      <th>Thigh(cm)</th>
+      <th>Waist(cm)</th>
+      <th>Chest(cm)</th>
+      <th>Upperarm(cm)</th>
       <th>Notes</th>
       <th colspan="3"></th>
     </tr>
@@ -18,6 +19,14 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
+        <td>
+          <% if entry.created_at != entry.updated_at %>
+            <%= entry.updated_at %>
+            <!-- TODO: format timestamps for created_at and updated_at -->
+          <% else %>
+            <%= entry.created_at %>
+          <% end %>
+        </td>
         <td><%= entry.weight %></td>
         <td><%= entry.thigh %></td>
         <td><%= entry.waist %></td>

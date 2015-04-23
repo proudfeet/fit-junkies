@@ -17,42 +17,8 @@
     <%= f.text_field :workout_name %>
   </div>
 
-  <div class="field">
-    <%= link_to 'Add an activity to your workout', new_activity_path %>
-    <!-- render activties/form -->
-  </div>
-
     <!-- TODO add in activity form fields to workout form
     use debugging to fix up-->
-
- <div class="field">
-
-
-   <div class="form-select">
-     <select name="activity" id="activity-select">
-       <% @activities.each do |activity| %>
-        <option value="<%= activity.id %>" data-activity-type="<%= activity.activity_type %>"><%= activity.name %></option>
-       <% end %>
-     </select>
-   </div>
-   <div class="input-container">
-     <label for="workout_sets">Sets</label>
-     <input type="text" id="workout_sets" name="workout[workout_sets]">
-   </div>
-   <div class="input-container">
-     <label for="workout_reps">Reps</label>
-     <input type="text" id="workout_reps" name="workout[workout_reps">
-   </div>
-   <div class="input-container">
-     <label for="workout_time">Time</label>
-     <input type="text" id="workout_time" name="workout[workout_time]">
-   </div>
-   <div class="input-container">
-     <label for="workout_distance">Distance</label>
-     <input type="text" id="workout_distance" name="workout[workout_distance]">
-   </div>
-      
- </div>
 
   <div class="field">
     <%= f.label :notes %><br>

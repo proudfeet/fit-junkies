@@ -15,7 +15,6 @@ class WorkoutsController < ApplicationController
   # GET /workouts/new
   def new
     @workout = Workout.new
-    @activities = Activity.all
     # @workout.activities.build # create a new activity on the workout
   end
 
