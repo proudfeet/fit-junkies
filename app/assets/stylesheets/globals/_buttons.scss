@@ -4,6 +4,9 @@ input[type="submit"] {
   border-color: transparent;
   @include transition(all $transition ease);
   border-radius: 0;
+  float: right;
+  height: 52px;
+  font-weight: bold;
 
   &:hover {
     @include opacity(0.7);
@@ -26,9 +29,17 @@ button {
 .btn-default {
   background-color: $primary;
   color: $secondary;
+  padding: 6px 44px;
 
   &:hover {
     border-color: $secondary;
     background-color: darken($primary, 0.1);
   }
+}
+
+.btn-back {
+  background-color: $secondary;
+  color: white !important;
+  border-radius: none !important;
+  padding: 6px 44px;
 }

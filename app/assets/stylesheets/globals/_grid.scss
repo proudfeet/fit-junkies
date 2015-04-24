@@ -2,10 +2,6 @@
   height: 100vh;
   @include outer-container;
   max-width: 100%;
-
-  @include media($tablet) {
-    @include pad();
-  }
 }
 
 .content-wrapper,
@@ -18,7 +14,6 @@
   @include fill-parent();
   @include row(table);
 }
-
 .content-wrapper,
 .home-wrapper {
   @include span-columns(9);
@@ -32,6 +27,7 @@
 
 .content-wrapper {
   @include pad();
+  margin-top: 2.357%;
 }
 
 .content-half {

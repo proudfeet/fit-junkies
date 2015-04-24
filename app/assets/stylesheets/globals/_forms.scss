@@ -4,23 +4,25 @@
 
 $checkbox-size:           1rem;
 $field-background:        rgba($secondary, 0.5);
+$field-padding:           1.5rem 1rem;
 
 //
 // Base Styles
 // --------------------------------------
 
 #{$all-text-inputs} {
-  border: 1px solid $secondary;
+  border: 1px solid $primary;
   width: 100%;
-  background-color: transparent;
+  background-color: $field-background;
   color: $primary;
   @include transition(all $transition ease);
+  padding: $field-padding;
 }
 
 #{$all-text-inputs-focus},
 #{$all-text-inputs-hover},
 #{$all-text-inputs-active} {
-  border: 1px solid $primary;
+  border-color: $primary;
 }
 
 fieldset {
@@ -34,8 +36,10 @@ fieldset {
 label {
   color: $primary;
   display: inline-block;
-  margin-bottom: .25rem;
+  margin-bottom: .75rem;
   max-width: 100%;
+  font-size: 1.8rem;
+  color: rgba(white, 0.6);
 }
 
 input {
@@ -60,7 +64,6 @@ input {
 textarea {
   display: block;
   max-height: 20rem;
-  max-width: 42rem;
   width: 100%;
   padding: .25rem .5rem;
   resize: none;
@@ -71,6 +74,8 @@ select {
   border: none;
   border-radius: 0;
   color: $primary;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
   &:focus {
     outline: none;
@@ -95,25 +100,27 @@ input[type='file'] {
 .form {
   @extend %clearfix;
   margin-bottom: 1rem;
-  @include span-columns(6);
-  // background-color: $field-background;
-  background-color: black;
   @include pad(default);
   color: $primary;
 }
 
 .form-select {
-  background-color: $secondary;
+  background-color: $field-background;
   border: 1px solid $primary;
   display: inline-block;
-  padding: 0.25em 0.5em;
+  padding: $field-padding;
   position: relative;
   outline: 0;
   min-width: 2rem;
   transition: all $transition ease;
+  width: 100%;
+
+  select {
+    width: 100%;
+  }
 
   &:before {
-    background-color: $primary;
+    background-color: rgba(black, 0.7);
     background-image: image-url('down.svg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -124,13 +131,14 @@ input[type='file'] {
     position: absolute;
     right: 0;
     top: 0;
-    width: 2em;
+    width: 5rem;
     transition: all $transition ease;
     pointer-events: none;
   }
 
   &:hover,
   &:focus {
+    background-color: $secondary;
     &:before {
       background-color: $secondary;
     }
@@ -144,7 +152,7 @@ input[type='file'] {
 
 .field {
   display: block;
-  margin-bottom: .75rem;
+  margin-bottom: 1rem;
 }
 
 .field-label {
@@ -232,6 +240,7 @@ input[type='file'] {
   max-width: 24rem;
   position: relative;
   vertical-align: middle;
+  width: 100%;
 
   select {
     color: $primary  ;
@@ -457,5 +466,12 @@ input[type="color"],
 
     &:hover {
       background-color: darken($primary, 10);
+  }
+}
+
+.form {
+  .btn {
+    width: 100%;
+    margin-top: 1.8rem;
   }
 }

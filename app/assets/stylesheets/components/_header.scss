@@ -40,9 +40,9 @@
 
 .icon-bar {
   width: 5px;
-  height: 4px;
+  height: 5px;
   display: block;
-  background-color: white;
+  background-color: rgba($secondary, 0.5);
 }
 
 @include media($tablet) {
@@ -72,10 +72,19 @@
     margin: .3rem;
     font-size: 2rem;
     padding: .25rem !important;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0;
   }
 
   .navbar-header {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+  }
+
+  .navbar-toggle {
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+  .collapse {
+    display: none;
   }
 }

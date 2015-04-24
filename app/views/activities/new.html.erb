@@ -1,9 +1,8 @@
 <div class="form">
-  <h1>New activity</h1>
+  <%= link_to "Back", activities_path, class: '' %>
 
-  <%= @activity %>
+  <h1>New activity</h1>
 
   <%= render 'form' %>
 
-  <%= link_to "Back", activities_path %>
 </div>
