@@ -15,6 +15,10 @@ class WorkoutsController < ApplicationController
   # GET /workouts/new
   def new
     @workout = Workout.new
+
+    5.times do
+      @workout.workout_activities.new
+    end
     # @workout.activities.build # create a new activity on the workout
   end
 
@@ -32,6 +36,11 @@ class WorkoutsController < ApplicationController
   # GET /workouts/1/edit
   def edit
   end
+
+  # def duplicate
+  #   @workout = Workout.clone
+  #   @workout.save
+  # end
 
   # POST /workouts
   # POST /workouts.json
@@ -81,6 +90,6 @@ class WorkoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workout_params
-      params.require(:workout).permit(:workout_name, :notes)
+      params.require(:workout).permit(:workout_name, :notes, :workout_activites_attributes => [ :set, :reps, :weight, :distance, :time, :activity_id])
     end
 end

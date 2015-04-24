@@ -13,7 +13,9 @@
 
   <div class="field">
     <%= f.label :name, "Activity Name" %><br>
-    <%= f.text_field :name %>
+    <div class="form-select">
+      <%= f.collection_select(:name, Activity.all, :id, :name, include_blank: true) %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :activity_type, "Activity Type", :class => 'field-label' %>
@@ -29,7 +31,7 @@
             ['Weights', 'weights'],
             ['Distance', 'distance'],
             ['Kettle Bells', 'kettle-bells']
-          ])
+          ]), include_blank: true
         ) %>
     </div>
   </div>

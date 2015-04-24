@@ -1,4 +1,3 @@
-
 <%= form_for(@workout, :class => 'form') do |f| %>
   <% if @workout.errors.any? %>
     <div id="error_explanation">
@@ -16,13 +15,40 @@
     <%= f.label :workout_name, "Name your Workout" %><br>
     <%= f.text_field :workout_name %>
   </div>
-
+<!--
   <div class="field">
-    <a href="#">Add an Activity</a>
-  </div>
+    <a href="#" class="">Add an Activity</a>
+  </div> -->
 
-    <!-- TODO add in activity form fields to workout form
-    use debugging to fix up-->
+  <%= f.fields_for :workout_activites do |fwa| %>
+    <div class="field">
+      <%= fwa.label :name, "Activity Name" %><br>
+      <div class="form-select">
+        <%= fwa.collection_select(:name, Activity.all, :id, :name, include_blank: true) %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= fwa.label :sets, "Sets" %>
+      <%= fwa.text_field :sets %>
+    </div>
+    <div class="field">
+      <%= fwa.label :reps, "Reps" %>
+      <%= fwa.text_field :reps %>
+    </div>
+    <div class="field">
+      <%= fwa.label :weight, "Weight" %>
+      <%= fwa.text_field :weight %>
+    </div>
+    <div class="field">
+      <%= fwa.label :distance, "distance" %>
+      <%= fwa.text_field :distance %>
+    </div>
+    <div class="field">
+      <%= fwa.label :time, "time" %>
+      <%= fwa.text_field :time %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :notes %><br>

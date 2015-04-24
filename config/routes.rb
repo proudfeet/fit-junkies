@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :workouts
   resources :workout_activities
 
+  # resources :workouts do
+  #   duplicate do
+  #     get :duplicate
+  #   end
+  # end
+
 
   resources :entries
 
