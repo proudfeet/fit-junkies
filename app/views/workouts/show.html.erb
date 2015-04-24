@@ -12,5 +12,6 @@
 
 <%= link_to 'Edit', edit_workout_path(@workout) %> |
 <%= link_to 'Back', workouts_path %>
-<%= link_to 'Add some activities for this workout', new_workout_activity_path %>
+<%= link_to 'Add some activities for this workout', new_workout_activity_path(workout_id: @workout.id) %>
+<!-- The above line passes in the id of the current workout as workout_id to the next page (meaning the workout_activities#new_form) -->
 <!-- TODO: fix above path (nested routing?) to link to something like workout_activity/workoutId/new -->

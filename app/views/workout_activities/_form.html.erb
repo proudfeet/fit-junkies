@@ -12,19 +12,23 @@
   <% end %>
 
     <div class="form-select">
-      <select name="activity" id="activity-select">
+      <select name="activity_id" id="activity-select">
         <% @activities.each do |activity| %>
          <option value="<%= activity.id %>" data-activity-type="<%= activity.activity_type %>"><%= activity.name %></option>
         <% end %>
       </select>
     </div>
+      <%= f.hidden_field :workout_id %>
+      <!-- Hidden field, "hides" it on the form -->
+      <!-- the info for this is being passed in from the workout_activity#new, expects the info from workout_id: -->
+      <!-- this will be passed in to the workout_id column on this instance of our workout_activity model -->
     <div class="field">
       <%= f.label :sets %>
       <%= f.text_field :sets %>
     </div>
     <div class="field">
       <%= f.label :reps %>
-      <%= f.text_field :sets %>
+      <%= f.text_field :reps %>
     </div>
     <div class="field">
       <%= f.label :time %>

@@ -14,7 +14,7 @@ class WorkoutActivitiesController < ApplicationController
 
   # GET /workout_activities/new
   def new
-    @workout_activity = WorkoutActivity.new
+    @workout_activity = WorkoutActivity.new(workout_id: params[:workout_id])
     @activities = Activity.all
   end
 
@@ -26,6 +26,9 @@ class WorkoutActivitiesController < ApplicationController
   # POST /workout_activities.json
   def create
     @workout_activity = WorkoutActivity.new(workout_activity_params)
+    @workout_activity.activity_id = params[:activity_id]
+    # the reason we included the above line is because activity_id is not a property of the params (because we did not use the rails helper in the new _form)
+    # What the above line does is sets the activity_id column of this instance of workout_activity to the name attribute of the select in the workout_activity#new _form
 
     respond_to do |format|
       if @workout_activity.save
@@ -70,6 +73,8 @@ class WorkoutActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workout_activity_params
-      params[:workout_activity]
+      # params[:workout_activity]
+      params.require(:workout_activity).permit(:workout_id, :sets, :reps, :activity_id, :time, :distance, :weight)
+      # params.require(:entry).permit(:weight, :thigh, :waist, :chest, :upperarm, :notes)
     end
 end

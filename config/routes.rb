@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :workouts do
-    resources :workout_activities
-  end
+  resources :workouts
+  resources :workout_activities
+
 
   resources :entries
 
