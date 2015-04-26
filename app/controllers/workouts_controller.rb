@@ -10,6 +10,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts/1
   # GET /workouts/1.json
   def show
+    @activities = Activity.all
   end
 
   # GET /workouts/new

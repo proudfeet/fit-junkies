@@ -1,9 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Workout type:</strong>
+  <strong>Workout name:</strong>
   <%= @workout.workout_name %>
 </p>
+
+<div class="activity-list">
+	<% @workout.getWorkoutActivities.each do |workout, i| %>
+	<div>
+		<div class="dib">
+			<h3>Activity</h3>
+			<% if false %>
+			<%= @activities.getActivity.name %>
+			<!-- TODO: fix this, find how out how pass in global variables within for loop to get activity name to appear -->
+			<!-- So close, and yet, so far -->
+			<% end %>
+		</div>
+		<div class="dib">
+			<h3>Sets</h3>
+			<%= workout.sets %>
+		</div>
+		<div class="dib">
+			<h3>Reps</h3>
+			<%= workout.reps %>
+		</div>
+		<div class="dib">
+			<h3>Weight</h3>
+			<%= workout.weight %>
+		</div>
+		<div class="dib">
+			<h3>Time</h3>
+			<%= workout.time %>
+		</div>
+		<div class="dib">
+			<h3>Distance</h3>
+			<%= workout.distance %>
+		</div>
+	</div>
+	<% end %>
+</div>
 
 <p>
   <strong>Notes:</strong>
