@@ -7,7 +7,4 @@ class Workout < ActiveRecord::Base
   	WorkoutActivity.where(workout_id: self.id)
   end
 
-  def getActivity
-  	Activity.find(self.getWorkoutActivities.pluck(:activity_id))
-  end
 end

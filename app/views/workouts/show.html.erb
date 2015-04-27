@@ -6,54 +6,52 @@
 </p>
 
 <div class="activity-list">
-	<% @workout.getWorkoutActivities.each do |workout, i| %>
+	<% @workout.getWorkoutActivities.each do |workout_activity| %>
 	<div>
 		<div class="dib">
 			<h3>Activity</h3>
-			<% if false %>
-			<%= @activities.getActivity %>
+			<%= workout_activity.getActivityName %>
 			<!-- TODO: fix this, find how out how pass in global variables within for loop to get activity name to appear -->
 			<!-- So close, and yet, so far -->
 			<!-- Currently showing activity_id -->
-			<% end %>
-			<%= workout.activity_id %>
+			<%= workout_activity.activity_id %>
 		</div>
 		<div class="dib">
 			<h3>Sets</h3>
-			<% if workout.sets %>
-				<span class="data"><%= workout.sets %></span> 
+			<% if workout_activity.sets %>
+				<span class="data"><%= workout_activity.sets %></span> 
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
 		</div>
 		<div class="dib">
 			<h3>Reps</h3>
-			<% if workout.reps %>
-				<span class="data"><%= workout.reps %></span> 
+			<% if workout_activity.reps %>
+				<span class="data"><%= workout_activity.reps %></span> 
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
 		</div>
 		<div class="dib">
 			<h3>Weight (lbs)</h3>
-			<% if workout.weight %>
-				<span class="data"><%= workout.weight %></span> 
+			<% if workout_activity.weight %>
+				<span class="data"><%= workout_activity.weight %></span> 
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
 		</div>
 		<div class="dib">
 			<h3>Distance (km)</h3>
-			<% if workout.distance %>
-				<span class="data"><%= workout.distance %></span> 
+			<% if workout_activity.distance %>
+				<span class="data"><%= workout_activity.distance %></span> 
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
 		</div>
 		<div class="dib">
 			<h3>Time (minutes)</h3>
-			<% if workout.time %>
-				<span class="data"><%= workout.time %></span> 
+			<% if workout_activity.time %>
+				<span class="data"><%= workout_activity.time %></span> 
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
