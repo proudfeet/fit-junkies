@@ -13,6 +13,7 @@
 .inner-wrapper {
   @include fill-parent();
   @include row(table);
+  margin-bottom: 63px;
 }
 .content-wrapper,
 .home-wrapper {
