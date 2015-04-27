@@ -13,9 +13,7 @@
 
   <div class="field">
     <%= f.label :name, "Activity Name" %><br>
-    <div class="form-select">
-      <%= f.collection_select(:name, Activity.all, :id, :name, include_blank: true) %>
-    </div>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :activity_type, "Activity Type", :class => 'field-label' %>

@@ -11,18 +11,20 @@ $field-padding:           1.5rem 1rem;
 // --------------------------------------
 
 #{$all-text-inputs} {
-  border: 1px solid $primary;
+  border: 1px solid rgba(white, 0.6);
   width: 100%;
   background-color: $field-background;
-  color: $primary;
   @include transition(all $transition ease);
   padding: $field-padding;
+  color: rgba(white, 0.6);
 }
 
 #{$all-text-inputs-focus},
 #{$all-text-inputs-hover},
 #{$all-text-inputs-active} {
   border-color: $primary;
+  color: $primary;
+
 }
 
 fieldset {
@@ -40,6 +42,7 @@ label {
   max-width: 100%;
   font-size: 1.8rem;
   color: rgba(white, 0.6);
+  text-transform: capitalize;
 }
 
 input {
@@ -106,7 +109,7 @@ input[type='file'] {
 
 .form-select {
   background-color: $field-background;
-  border: 1px solid $primary;
+  border: 1px solid rgba(white, .6);
   display: inline-block;
   padding: $field-padding;
   position: relative;
@@ -138,6 +141,7 @@ input[type='file'] {
 
   &:hover,
   &:focus {
+    border-color: $primary;
     background-color: $secondary;
     &:before {
       background-color: $secondary;
@@ -243,7 +247,7 @@ input[type='file'] {
   width: 100%;
 
   select {
-    color: $primary  ;
+    color: rgba(white, .6);
     font-family: $font-primary;
     height: 1.9rem;
     margin-top: .1rem; // to center the text
@@ -264,6 +268,9 @@ input[type='file'] {
   }
 
   &:hover {
+    color: $primary;
+    border-color: $primary;
+
     &:after {
       background-color: $primary;
     }

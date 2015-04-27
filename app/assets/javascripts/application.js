@@ -15,3 +15,25 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+function disableInputs(){
+  var selectEl = document.getElementById("activity-select");
+  var selectOpt = selectEl.options[selectEl.selectedIndex].dataset.activityType;
+  if(selectOpt === "anabolic") {
+    document.getElementById("workout_time").setAttribute("disabled", true);
+    document.getElementById("workout_distance").setAttribute("disabled", true);
+    document.getElementById("workout_sets").removeAttribute("disabled");
+    document.getElementById("workout_reps").removeAttribute("disabled");
+  } else {
+    document.getElementById("workout_sets").setAttribute("disabled", true);
+    document.getElementById("workout_reps").setAttribute("disabled", true);
+    document.getElementById("workout_time").removeAttribute("disabled");
+    document.getElementById("workout_distance").removeAttribute("disabled");
+  }
+};
+
+disableInputs();
+$("#activity-select").change(function(){
+  disableInputs();
+});
