@@ -29,10 +29,9 @@ class WorkoutActivitiesController < ApplicationController
     @workout_activity.activity_id = params[:activity_id]
     # the reason we included the above line is because activity_id is not a property of the params (because we did not use the rails helper in the new _form)
     # What the above line does is sets the activity_id column of this instance of workout_activity to the name attribute of the select in the workout_activity#new _form
-
     respond_to do |format|
       if @workout_activity.save
-        format.html { redirect_to @workout_activity, notice: 'Workout activity was successfully created.' }
+        format.html { redirect_to @workout_activity, notice: Activity.find(params[:activity_id]).name + ' was added to ' + Workout.find(params[:workout_activity][:workout_id]).workout_name }
         format.json { render :show, status: :created, location: @workout_activity }
       else
         format.html { render :new }
