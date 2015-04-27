@@ -28,6 +28,7 @@
 .content-wrapper {
   @include pad();
   margin-top: 2.357%;
+  background: darken($teal, 46);
 }
 
 .content-half {
