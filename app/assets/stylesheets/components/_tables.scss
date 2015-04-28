@@ -1,0 +1,39 @@
+// Points-Board Page
+table {
+  width: 100%;
+  border-color: rgba(white, .2);
+
+  th {
+    text-align: left;
+    padding: .5rem .25rem;
+  }
+
+  td {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: $font-size-4;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  thead {
+    border-bottom: 6px double rgba(white, .2);
+    th {
+      font-size: $font-size-5;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    th:first-child {
+      text-align: left;
+    }
+  }
+}
+
+tr {
+  line-height: 1.55rem;
+}

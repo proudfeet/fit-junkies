@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Workout name:</strong>
+<h1>
+  Workout name:
   <%= @workout.workout_name %>
-</p>
+</h1>
 
 <div class="activity-list">
 	<% @workout.getWorkoutActivities.each do |workout_activity| %>
@@ -18,7 +18,7 @@
 		<div class="dib">
 			<h3>Sets</h3>
 			<% if workout_activity.sets %>
-				<span class="data"><%= workout_activity.sets %></span> 
+				<span class="data"><%= workout_activity.sets %></span>
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
@@ -26,7 +26,7 @@
 		<div class="dib">
 			<h3>Reps</h3>
 			<% if workout_activity.reps %>
-				<span class="data"><%= workout_activity.reps %></span> 
+				<span class="data"><%= workout_activity.reps %></span>
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
@@ -34,7 +34,7 @@
 		<div class="dib">
 			<h3>Weight (lbs)</h3>
 			<% if workout_activity.weight %>
-				<span class="data"><%= workout_activity.weight %></span> 
+				<span class="data"><%= workout_activity.weight %></span>
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
@@ -42,7 +42,7 @@
 		<div class="dib">
 			<h3>Distance (km)</h3>
 			<% if workout_activity.distance %>
-				<span class="data"><%= workout_activity.distance %></span> 
+				<span class="data"><%= workout_activity.distance %></span>
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>
@@ -50,7 +50,7 @@
 		<div class="dib">
 			<h3>Time (minutes)</h3>
 			<% if workout_activity.time %>
-				<span class="data"><%= workout_activity.time %></span> 
+				<span class="data"><%= workout_activity.time %></span>
 			<% else %>
 				<span class="no-data">N/A</span>
 			<% end %>

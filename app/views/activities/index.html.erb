@@ -1,11 +1,30 @@
-<%= @activities.each do |activity| %>
-	<div class="activity-item">
-		<p><%= activity.name %></p>
-		<p><%= activity.activity_type %></p>
-		<p><%= link_to "Edit", edit_activity_path(activity) %></p>
-		<p><%= link_to "Delete", activity_path(activity), method: :delete %></p>	
-	</div>
-<% end %>
-<div>	
-	<%= link_to "New", new_activity_path, class: "new-link", title: "New" %>
+<h1>Activity Listing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity Name</th>
+      <th>Activity Type</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.activity_type %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to "Edit", edit_activity_path(activity) %></td>
+        <td><%= link_to "Delete", activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+	<%= link_to "Add New Activity", new_activity_path, class: "new-link", title: "Add New Activity" %>
 </div>
