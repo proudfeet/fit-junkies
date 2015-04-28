@@ -13,8 +13,12 @@
 .inner-wrapper {
   @include fill-parent();
   @include row(table);
-  margin-bottom: 18vh;
+
+  @include media($tablet) {
+    margin-bottom: 18vh;
+  }
 }
+
 .content-wrapper,
 .home-wrapper {
   @include span-columns(9);
@@ -46,6 +50,7 @@
   position: fixed;
   @include span-columns(3);
   @include linear-gradient(to right, $primary, $primary, $primary, rgba($secondary, 0.4));
+  margin-bottom: 18vh;
 }
 
 .home-row {
