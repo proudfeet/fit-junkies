@@ -1,4 +1,4 @@
-.wrapper {
+  .wrapper {
   height: 100vh;
   @include outer-container;
   max-width: 100%;
@@ -30,6 +30,7 @@
   @include pad();
   margin-top: 2.357%;
   background: darken($teal, 46);
+  color: lighten($teal, 43);
 }
 
 .content-half {
