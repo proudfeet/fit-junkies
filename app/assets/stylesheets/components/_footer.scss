@@ -1,5 +1,6 @@
 .footer {
   color: $primary;
+  padding-top: 1.5rem;
 
   @include media($tablet) {
     position: fixed;
@@ -8,5 +9,13 @@
     z-index: 1;
     padding: 1.5rem 2.5rem .5rem;
     height: auto;
+  }
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: lighten($primary, 10);
+    }
   }
 }

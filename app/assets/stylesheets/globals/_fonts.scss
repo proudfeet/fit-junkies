@@ -62,7 +62,10 @@ h6,
 
 p,
 ol,
-ul {
+ul,
+table,
+td,
+tr {
   margin-top: 0;
   font-size: $font-size-md;
   line-height: $line-height-computed;
