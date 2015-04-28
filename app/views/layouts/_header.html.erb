@@ -10,12 +10,9 @@
     </div>
 
     <ul class="nav collapse" id="navbar-collapse">
-      <li>
-        <%= link_to "Workouts", workouts_path, class: 'active' %>
-      </li>
       <li class=""><%= link_to "Workouts", workouts_path %></li>
-      <li class=""><%= link_to "Contact", workouts_path %></li>
       <% if user_signed_in? %>
+        <li class=""><%= link_to "New Activity", new_activity_path %></li>
         <li>
           <%= link_to 'New Workout', new_workout_path %>
         </li>

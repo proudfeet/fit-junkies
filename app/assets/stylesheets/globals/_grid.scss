@@ -13,7 +13,7 @@
 .inner-wrapper {
   @include fill-parent();
   @include row(table);
-  margin-bottom: 63px;
+  margin-bottom: 18vh;
 }
 .content-wrapper,
 .home-wrapper {
@@ -63,7 +63,7 @@
 .footer {
   background-color: $secondary;
   color: white;
-  height: 10vh;
+  height: 15vh;
   padding: $nav-padding;
   // max-height: 75px;
 }
@@ -72,7 +72,7 @@
 }
 
 .nav {
-  height: 90vh;
+  height: 85vh;
   @include align-content(flex-start);
   @include display(flex);
   @include flex-direction(column);
