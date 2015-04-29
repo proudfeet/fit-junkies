@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 
+# User pry for debugging just instert "binding.pry" within the controller you want to test
 gem 'pry'
 
 group :development do
