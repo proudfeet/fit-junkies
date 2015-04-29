@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :workout_logs
 
   devise_for :users
+  resources :users
   resources :workouts
   resources :workout_activities
 
@@ -12,12 +13,14 @@ Rails.application.routes.draw do
   #   end
   # end
 
-
   resources :entries
-
-  root 'pages#home'
-
   resources :activities
+
+
+  root :to => "pages#home"
+
+  # root 'pages#home'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
