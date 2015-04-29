@@ -15,10 +15,6 @@
     <%= f.label :workout_name, "Name your Workout" %><br>
     <%= f.text_field :workout_name %>
   </div>
-<!--
-  <div class="field">
-    <a href="#" class="">Add an Activity</a>
-  </div> -->
 
   <%= f.fields_for :workout_activities do |fwa| %>
 
@@ -26,7 +22,7 @@
     <div class="field">
       <%= fwa.label :name, "Activity Name" %><br>
       <div class="form-select">
-        <%= fwa.collection_select(:activity_id, Activity.all, :id, :name, include_blank: true) %>
+        <%= fwa.select(:activity_id, Activity.all.collect { |a| [a.name, a.id]}, include_blank: true) %>
       </div>
     </div>
 
