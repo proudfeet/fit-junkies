@@ -19,6 +19,11 @@
         <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
         <td class="hidden-xs"><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% workout.workout_activities.each do |wa| %>
+        <tr>
+          <td><%= wa.name %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
