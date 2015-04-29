@@ -33,6 +33,7 @@ button {
   border-radius: 0px !important;
   border-color: $primary;
   margin: .5rem 0;
+  text-transform: uppercase;
 
   &:hover {
     border-color: $secondary;
