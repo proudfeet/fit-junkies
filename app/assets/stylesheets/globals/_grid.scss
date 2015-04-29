@@ -51,7 +51,6 @@
   position: fixed;
   @include span-columns(3);
   @include linear-gradient(to right, $primary, $primary, $primary, rgba($secondary, 0.4));
-  margin-bottom: 18vh;
 }
 
 .home-row {

@@ -30,6 +30,9 @@ button {
   background-color: $primary;
   color: $secondary;
   padding: 6px 44px;
+  border-radius: 0px !important;
+  border-color: $primary;
+  margin: .5rem 0;
 
   &:hover {
     border-color: $secondary;
