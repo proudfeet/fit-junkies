@@ -4,6 +4,5 @@
 
 body {
   background-color: $body-color;
-  // @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("barweight.jpg"));
   background-size: cover;
 }

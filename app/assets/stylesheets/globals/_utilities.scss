@@ -1,5 +1,5 @@
 .body-background {
-  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("skip-rope.jpg"));
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), image-url("skip-rope.jpg"));
 }
 
 .content-half {
