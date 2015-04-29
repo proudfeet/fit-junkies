@@ -21,6 +21,8 @@
   </div> -->
 
   <%= f.fields_for :workout_activites do |fwa| %>
+
+    <!-- TODO: If workout activities doesn't exist add link add an activity -->
     <div class="field">
       <%= fwa.label :name, "Activity Name" %><br>
       <div class="form-select">
@@ -28,15 +30,15 @@
       </div>
     </div>
 
-    <div class="field">
+    <div class="field" id="workout_sets">
       <%= fwa.label :sets, "Sets" %>
       <%= fwa.text_field :sets %>
     </div>
-    <div class="field">
+    <div class="field" id="workout_reps">
       <%= fwa.label :reps, "Reps" %>
       <%= fwa.text_field :reps %>
     </div>
-    <div class="field">
+    <div class="field" id="workout_sets">
       <%= fwa.label :weight, "Weight" %>
       <%= fwa.text_field :weight %>
     </div>
