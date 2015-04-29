@@ -5,7 +5,7 @@
 }
 
 .home-item {
-  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("barweight.jpg"));
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), image-url("barweight.jpg"));
   background-size: cover;
   background-position: center center;
   @include pad(default);
@@ -75,19 +75,19 @@
 }
 
 .home-item-2 {
-  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("skip-rope.jpg"));
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), image-url("skip-rope.jpg"));
 }
 
 .home-item-3 {
-  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("kettle-bell-one.jpg"));
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), image-url("kettle-bell-one.jpg"));
 }
 
 .home-item-4 {
-  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("kettle-bell-one.jpg"));
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), image-url("kettle-bell-one.jpg"));
 }
 
 .home-item-5 {
-  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), url("mixed-weights.jpg"));
+  @include background-image(linear-gradient(rgba($primary,0.2), rgba($primary,0.2)), image-url("mixed-weights.jpg"));
 }
 
 @include media($tablet) {
