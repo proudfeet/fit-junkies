@@ -20,13 +20,13 @@
     <a href="#" class="">Add an Activity</a>
   </div> -->
 
-  <%= f.fields_for :workout_activites do |fwa| %>
+  <%= f.fields_for :workout_activities do |fwa| %>
 
     <!-- TODO: If workout activities doesn't exist add link add an activity -->
     <div class="field">
       <%= fwa.label :name, "Activity Name" %><br>
       <div class="form-select">
-        <%= fwa.collection_select(:name, Activity.all, :id, :name, include_blank: true) %>
+        <%= fwa.collection_select(:activity_id, Activity.all, :id, :name, include_blank: true) %>
       </div>
     </div>
 
