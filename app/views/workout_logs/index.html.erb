@@ -12,6 +12,9 @@
   <tbody>
     <% @workout_logs.each do |workout_log| %>
       <tr>
+        <% @workouts.each do |workout| %>
+          <td><%= workout.workout_name %></td>
+        <% end %>
         <td><%= link_to 'Show', workout_log %></td>
         <td><%= link_to 'Edit', edit_workout_log_path(workout_log) %></td>
         <td><%= link_to 'Destroy', workout_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Workout log', new_workout_log_path %>
+<%= link_to 'New Workout log', new_workout_log_path, :class => 'btn btn-default' %>
