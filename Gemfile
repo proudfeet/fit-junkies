@@ -44,7 +44,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 
 group :assets do
   gem 'autoprefixer-rails'
-  gem 'image_optim'
+  # gem 'image_optim'
 end
 
 # Use ActiveModel has_secure_password
