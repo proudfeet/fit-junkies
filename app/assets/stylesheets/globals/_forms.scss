@@ -2,7 +2,7 @@
 // Variables
 // --------------------------------------
 
-$checkbox-size:           1rem;
+$checkbox-size:           2rem;
 $field-background:        rgba($secondary, 0.5);
 $field-padding:           1.5rem 1rem;
 
@@ -300,7 +300,7 @@ input[type='file'] {
     &:before {
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: .6rem .6rem;
+      background-size: 1.5rem 1.5rem;
       border: 1px solid $base;
       content: '';
       display: inline-block;

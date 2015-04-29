@@ -33,7 +33,8 @@
 .content-wrapper {
   @include pad();
   margin-top: 2.357%;
-  background: darken($teal, 46);
+  // background: darken($teal, 46);
+  background: darken(rgba($secondary, 0.9), 20);
   color: lighten($teal, 43);
 }
 

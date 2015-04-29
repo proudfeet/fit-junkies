@@ -107,5 +107,10 @@
     @include pad();
     @include span-columns(8);
   }
+
+  .home-item-1,
+  .home-item-2 {
+    height: 25vh;
+  }
 }
 
