@@ -235,6 +235,7 @@ DEPENDENCIES
   jquery-rails
   neat
   pg
+  pry
   rack-livereload
   rails (= 4.2.0)
   rails_12factor
