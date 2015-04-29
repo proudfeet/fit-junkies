@@ -15,9 +15,9 @@
       <tr>
         <td><%= workout.workout_name %></td>
         <td><%= workout.notes %></td>
-        <td><%= link_to 'Details', workout %></td>
-        <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
-        <td><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="hidden-xs"><%= link_to 'Details', workout %></td>
+        <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
+        <td class="hidden-xs"><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

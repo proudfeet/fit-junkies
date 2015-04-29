@@ -33,9 +33,9 @@
         <td><%= entry.chest %></td>
         <td><%= entry.upperarm %></td>
         <td><%= entry.notes %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="hidden-xs" ><%= link_to 'Show', entry %></td>
+        <td class="hidden-xs" ><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td class="hidden-xs" ><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
