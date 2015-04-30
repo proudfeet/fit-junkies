@@ -100,4 +100,8 @@
   .sidebar-container {
     @include span-columns(8);
   }
+
+  .content-wrapper {
+    margin-bottom: 15vh;
+  }
 }
