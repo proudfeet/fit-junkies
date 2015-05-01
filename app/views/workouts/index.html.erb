@@ -13,17 +13,19 @@
   <tbody>
     <% @workouts.each do |workout| %>
       <tr>
-        <td><%= workout.workout_name %></td>
+        <td><%= workout.workout_name %>
+          <td>
+            <% workout.workout_activities.each do |wa| %>
+              <%= wa.name %>
+            <% end %>
+          <td>
+        </td>
         <td><%= workout.notes %></td>
         <td class="hidden-xs"><%= link_to 'Details', workout %></td>
         <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
-        <td class="hidden-xs"><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="hidden-xs"><%= link_to 'Remove', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
-      <% workout.workout_activities.each do |wa| %>
-        <tr>
-          <td><%= wa.name %></td>
-        </tr>
-      <% end %>
     <% end %>
   </tbody>
 </table>
