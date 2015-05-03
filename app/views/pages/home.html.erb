@@ -43,9 +43,12 @@
       </div>
     </div>
     <div class="home-item home-item-6">
-      <h2>Hello</h2>
       <h3>We do one thing. <br>Track your progress.</h3>
       <p>Our focus is to allow you to easily track your workouts while you’re at the gym. No more spread sheets or notebooks. We have the best mobile app in the market.</p>
+      <div class="visible-xs">
+        <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-default'  %>
+        <%= link_to "Login", new_user_session_path, :class => 'btn btn-right'  %>
+      </div>
     </div>
   </div>
 </div>

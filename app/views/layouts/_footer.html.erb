@@ -1,12 +1,12 @@
 <footer class="footer">
   <div class="sidebar">
+    <p><% if user_signed_in? %>
+        Logged in as <strong><%= current_user.first_name %></strong> <br>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% end %>
+    </p>
     <p class="copyright">FitJunkies &copy; 2015 <br>
       Designed & Developed By <%= link_to 'Robyn', "http://robynlarsen.ca/", target: '_blank' %> & <%= link_to 'Simon', "http://proudfeet.io/", target: '_blank' %> <br>
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>
-      <% end %>
-
     </p>
-
   </div>
 </footer>
