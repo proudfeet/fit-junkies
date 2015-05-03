@@ -10,7 +10,8 @@ $field-padding:           1.5rem 1rem;
 // Base Styles
 // --------------------------------------
 
-#{$all-text-inputs} {
+#{$all-text-inputs},
+.btn-collapse {
   border: 1px solid rgba(white, 0.6);
   width: 100%;
   background-color: $field-background;
@@ -21,10 +22,16 @@ $field-padding:           1.5rem 1rem;
 
 #{$all-text-inputs-focus},
 #{$all-text-inputs-hover},
-#{$all-text-inputs-active} {
+#{$all-text-inputs-active},
+.btn-collapse {
   border-color: $primary;
   color: $primary;
+}
 
+.form-section {
+  border: 1px solid rgba(white, 0.6);
+  @include pad();
+  margin-bottom: 2.357%;
 }
 
 fieldset {

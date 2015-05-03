@@ -25,7 +25,8 @@ button {
   }
 }
 
-.btn {
+.btn,
+%btn {
   padding: 15px 44px;
   font-weight: 700;
   margin: .5rem 0;
@@ -54,4 +55,29 @@ button {
   background-color: $secondary;
   color: white !important;
   border-radius: none !important;
+}
+
+.btn-right {
+  float: right;
+}
+
+.btn-collapse {
+  text-align: left;
+  padding: 15px;
+  display: block;
+  margin-top: 2.3567%;
+  margin-bottom: 2.3567%;
+  border-color: rgba(white, .6);
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    border-color: $primary;
+  }
+
+  svg {
+    float: right;
+    max-width: 20px;
+    padding-top: 4px;
+  }
 }
