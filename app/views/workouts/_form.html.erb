@@ -12,41 +12,52 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :workout_name, "Name your Workout" %><br>
+    <%= f.label :workout_name, "Name your Workout", :class => 'h1' %><br>
     <%= f.text_field :workout_name %>
   </div>
 
   <%= f.fields_for :workout_activities do |fwa| %>
-
     <!-- TODO: If workout activities doesn't exist add link add an activity -->
-    <div class="field">
-      <%= fwa.label :name, "Activity Name" %><br>
-      <div class="form-select">
-        <%= fwa.select(:activity_id, Activity.all.collect { |a| [a.name, a.id]}, include_blank: true) %>
+    <a href="" class="btn-collapse collapsed" data-toggle="collapse" data-target="#activity-<%= fwa.index %>">
+      Add an Activity
+      <svg version="1.1" id="down-arrow" class="down-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#32dac4"
+        viewBox="-90 346.285 612 388.574" enable-background="new -90 346.285 612 388.574"
+        xml:space="preserve">
+        <path d="M-90,438.571l315.713,296.287L522,419.142v-72.857L225.713,666.858L-90,365.713V438.571z"/>
+      </svg>
+    </a>
+
+    <div class="form-section collapsing-content collapse out" id="activity-<%= fwa.index %>">
+      <div class="field">
+        <%= fwa.label :name, "Activity Name" %><br>
+        <div class="form-select">
+          <%= fwa.select(:activity_id, Activity.all.collect { |a| [a.name, a.id]}, include_blank: true) %>
+        </div>
+      </div>
+
+      <div class="field" id="workout_sets">
+        <%= fwa.label :sets, "Sets" %>
+        <%= fwa.text_field :sets %>
+      </div>
+      <div class="field" id="workout_reps">
+        <%= fwa.label :reps, "Reps" %>
+        <%= fwa.text_field :reps %>
+      </div>
+      <div class="field" id="workout_sets">
+        <%= fwa.label :weight, "Weight" %>
+        <%= fwa.text_field :weight %>
+      </div>
+      <div class="field">
+        <%= fwa.label :distance, "distance" %>
+        <%= fwa.text_field :distance %>
+      </div>
+      <div class="field">
+        <%= fwa.label :time, "time" %>
+        <%= fwa.text_field :time %>
       </div>
     </div>
-
-    <div class="field" id="workout_sets">
-      <%= fwa.label :sets, "Sets" %>
-      <%= fwa.text_field :sets %>
-    </div>
-    <div class="field" id="workout_reps">
-      <%= fwa.label :reps, "Reps" %>
-      <%= fwa.text_field :reps %>
-    </div>
-    <div class="field" id="workout_sets">
-      <%= fwa.label :weight, "Weight" %>
-      <%= fwa.text_field :weight %>
-    </div>
-    <div class="field">
-      <%= fwa.label :distance, "distance" %>
-      <%= fwa.text_field :distance %>
-    </div>
-    <div class="field">
-      <%= fwa.label :time, "time" %>
-      <%= fwa.text_field :time %>
-    </div>
   <% end %>
+
 
   <div class="field">
     <%= f.label :notes %><br>
@@ -56,6 +67,7 @@
   <%= f.submit :class => 'btn btn-default' %>
   </div>
 <% end %>
+
 
 <script>
   function disableInputs(){
