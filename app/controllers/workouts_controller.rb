@@ -17,9 +17,7 @@ class WorkoutsController < ApplicationController
   def new
     @workout = Workout.new
 
-    5.times do
-      @workout.workout_activities.new
-    end
+    @workout.workout_activities.new
     # @workout.activities.build # create a new activity on the workout
   end
 

@@ -18,16 +18,7 @@
 
   <!-- TODO: If workout activities doesn't exist add link add an activity -->
   <%= f.fields_for :workout_activities do |fwa| %>
-    <a href="javascript:void(0);" class="btn-collapse collapsed" data-toggle="collapse" data-target="#activity-<%= fwa.index %>">
-      Add an Activity
-      <svg version="1.1" id="plus-icon" class="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="18 53.5 893 893" enable-background="new 18 53.5 893 893" xml:space="preserve">
-      <path d="M464.5,53.5c123,0,228.167,43.667,315.5,131S911,377,911,500s-43.667,228.167-131,315.5s-192.5,131-315.5,131
-        s-228.167-43.667-315.5-131S18,623,18,500s43.667-228.167,131-315.5S341.5,53.5,464.5,53.5z M688,555.5v-112H521v-167H409v167H241
-        v112h168v168h112v-168H688z"/>
-      </svg>
-    </a>
-
-    <div class="form-section collapsing-content collapse out" id="activity-<%= fwa.index %>">
+    <div class="form-section" id="activity-<%= fwa.index %>">
       <div class="field">
         <%= fwa.label :name, "Activity Name" %><br>
         <div class="form-select">
@@ -58,6 +49,8 @@
     </div>
   <% end %>
 
+  <a href="javascript:void(0);" id="new-activity-link">Add new activity</a>
+
 
   <div class="field">
     <%= f.label :notes %><br>
@@ -68,27 +61,59 @@
   </div>
 <% end %>
 
-
 <script>
-  function disableInputs(){
-    var selectEl = document.getElementById("activity-select");
-    var selectOpt = selectEl.options[selectEl.selectedIndex].dataset.activityType;
-    if(selectOpt === "anabolic") {
-      document.getElementById("workout_time").setAttribute("disabled", true);
-      document.getElementById("workout_distance").setAttribute("disabled", true);
-      document.getElementById("workout_sets").removeAttribute("disabled");
-      document.getElementById("workout_reps").removeAttribute("disabled");
-    } else {
-      document.getElementById("workout_sets").setAttribute("disabled", true);
-      document.getElementById("workout_reps").setAttribute("disabled", true);
-      document.getElementById("workout_time").removeAttribute("disabled");
-      document.getElementById("workout_distance").removeAttribute("disabled");
-    }
-  };
+$(document).ready(function(){
+    function addNewActivity(){
+  var activityNum = 1;
+  var newActivity = "<div class='form-section collapsing-content out collapse in' id='activity-"+ activityNum +"'>"+
+  "<div class='field'>"+
+  "<label for='workout_workout_activities_attributes_"+activityNum+"_name'>Activity Name</label><br>"+
+  "<div class='form-select'>"+
+  "<select name='workout[workout_activities_attributes]["+activityNum+"][activity_id]' "+
+  "id='workout_workout_activities_attributes_"+activityNum+"_activity_id'><option value='></option>"+
+  "<option value='8'>bench press</option>"+
+  "<option value='9'>running</option>"+
+  "<option value='10'>squat</option>"+
+  "<option value='11'>deadlift</option>"+
+  "<option value='12'>cycling</option>"+
+  "<option value='13'>swimming</option></select>"+
+  "</div>"+
+  "</div>"+
 
-  disableInputs();
-  $("#activity-select").change(function(){
-    disableInputs();
-  });
+  "<div class='field' id='workout_sets'>"+
+  "<label for='workout_workout_activities_attributes_"+activityNum+"_sets'>Sets</label>"+
+  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][sets]' "+
+  "id='workout_workout_activities_attributes_"+activityNum+"_sets'>"+
+  "</div>"+
+  "<div class='field' id='workout_reps'>"+
+  "<label for='workout_workout_activities_attributes_"+activityNum+"_reps'>Reps</label>"+
+  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][reps]' "+
+  "id='workout_workout_activities_attributes_"+activityNum+"_reps'>"+
+  "</div>"+
+  "<div class='field' id='workout_sets'>"+
+  "<label for='workout_workout_activities_attributes_"+activityNum+"_weight'>Weight</label>"+
+  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][weight]' "+
+  "id='workout_workout_activities_attributes_"+activityNum+"_weight'>"+
+  "</div>"+
+  "<div class='field'>"+
+  "<label for='workout_workout_activities_attributes_"+activityNum+"_distance'>distance</label>"+
+  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][distance]' "+
+  "id='workout_workout_activities_attributes_"+activityNum+"_distance'>"+
+  "</div>"+
+  "<div class='field'>"+
+  "<label for='workout_workout_activities_attributes_"+activityNum+"_time'>time</label>"+
+  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][time]' "+
+  "id='workout_workout_activities_attributes_"+activityNum+"_time'>"+
+  "</div>"+
+  "</div>";
+  activityNum++;
+  console.log(newActivity);
+  $('#new-activity-link').before(newActivity);
+};
+$("#new-activity-link").click(function(){
+  console.log('hello');
+  addNewActivity();
+});
+});
 
 </script>
