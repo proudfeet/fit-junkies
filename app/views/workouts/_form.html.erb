@@ -18,7 +18,7 @@
 
   <!-- TODO: If workout activities doesn't exist add link add an activity -->
   <%= f.fields_for :workout_activities do |fwa| %>
-    <a href="" class="btn-collapse collapsed" data-toggle="collapse" data-target="#activity-<%= fwa.index %>">
+    <a href="javascript:void(0);" class="btn-collapse collapsed" data-toggle="collapse" data-target="#activity-<%= fwa.index %>">
       Add an Activity
       <svg version="1.1" id="plus-icon" class="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="18 53.5 893 893" enable-background="new 18 53.5 893 893" xml:space="preserve">
       <path d="M464.5,53.5c123,0,228.167,43.667,315.5,131S911,377,911,500s-43.667,228.167-131,315.5s-192.5,131-315.5,131
