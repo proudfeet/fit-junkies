@@ -16,14 +16,14 @@
     <%= f.text_field :workout_name %>
   </div>
 
+  <!-- TODO: If workout activities doesn't exist add link add an activity -->
   <%= f.fields_for :workout_activities do |fwa| %>
-    <!-- TODO: If workout activities doesn't exist add link add an activity -->
     <a href="" class="btn-collapse collapsed" data-toggle="collapse" data-target="#activity-<%= fwa.index %>">
       Add an Activity
-      <svg version="1.1" id="down-arrow" class="down-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#32dac4"
-        viewBox="-90 346.285 612 388.574" enable-background="new -90 346.285 612 388.574"
-        xml:space="preserve">
-        <path d="M-90,438.571l315.713,296.287L522,419.142v-72.857L225.713,666.858L-90,365.713V438.571z"/>
+      <svg version="1.1" id="plus-icon" class="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="18 53.5 893 893" enable-background="new 18 53.5 893 893" xml:space="preserve">
+      <path d="M464.5,53.5c123,0,228.167,43.667,315.5,131S911,377,911,500s-43.667,228.167-131,315.5s-192.5,131-315.5,131
+        s-228.167-43.667-315.5-131S18,623,18,500s43.667-228.167,131-315.5S341.5,53.5,464.5,53.5z M688,555.5v-112H521v-167H409v167H241
+        v112h168v168h112v-168H688z"/>
       </svg>
     </a>
 
