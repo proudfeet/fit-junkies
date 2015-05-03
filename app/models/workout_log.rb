@@ -1,3 +1,3 @@
 class WorkoutLog < ActiveRecord::Base
-	has_many :workouts
+	belongs_to :workout
 end
