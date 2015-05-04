@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Workouts</h1>
+
+<% if @workouts.all.current_user.index > 4 %>
+  <h2>You're doing great work <%= current_user.first_name %>! Keep it up.</h2>
+<% end %>
+
+<h1>Workout Listing</h1>
 
 <table>
   <thead>
