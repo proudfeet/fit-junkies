@@ -32,9 +32,7 @@
   left: 0;
   background-color: rgba($primary, 0.8);
   color: white;
-  @include pad(default);
-  // display: none;
-  // @include transform(translateY(100%));
+  @include pad();
   @include transition(bottom $transition ease-in-out);
 }
 
