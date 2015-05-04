@@ -17,24 +17,25 @@
   p {
     font-size: $font-size-3;
   }
+
+  &:hover {
+    .home-item-content {
+      bottom: 0;
+    }
+  }
 }
 
 .home-item-content {
   position: absolute;
-  bottom: 0;
+  bottom: -101%;
   right: 0;
   left: 0;
   background-color: rgba($primary, 0.8);
   color: white;
   @include pad(default);
-  display: none;
+  // display: none;
   // @include transform(translateY(100%));
-  @include transition(all $transition ease-in-out);
-
-  &:hover {
-    // @include opacity(0.9);
-    // @include transform(translateY(0));
-  }
+  @include transition(bottom $transition ease-in-out);
 }
 
 .home-row {
