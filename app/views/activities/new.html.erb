@@ -1,8 +1,7 @@
+<%= link_to "Back", activities_path, class: 'btn btn-right' %>
+
 <div class="form">
-  <%= link_to "Back", activities_path, class: '' %>
-
-  <h1>New activity</h1>
-
+  <h2>Hello, <%= current_user.first_name %></h2>
+  <h1>Add a New activity</h1>
   <%= render 'form' %>
-
 </div>
