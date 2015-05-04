@@ -17,6 +17,7 @@
     <% @workouts.each do |workout| %>
       <tr>
         <td><%= workout.workout_name %>
+        <td><%= workout.notes %></td>
           <td>
             <% workout.workout_activities.each do |wa| %>
               <%= wa.name %>
@@ -27,9 +28,9 @@
         <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
         <td class="hidden-xs"><%= link_to 'Remove', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
     <% end %>
   </tbody>
-  <p><%= workout.notes %></p>
 </table>
 
 <br>
