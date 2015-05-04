@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<% if @workouts.all.current_user.index > 4 %>
-  <h2>You're doing great work <%= current_user.first_name %>! Keep it up.</h2>
-<% end %>
+<h2>You're doing great work <%= current_user.first_name %>! Keep it up.</h2>
 
 <h1>Workout Listing</h1>
 
@@ -25,14 +23,13 @@
             <% end %>
           <td>
         </td>
-        <td><%= workout.notes %></td>
         <td class="hidden-xs"><%= link_to 'Details', workout %></td>
         <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
         <td class="hidden-xs"><%= link_to 'Remove', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
       </tr>
     <% end %>
   </tbody>
+  <p><%= workout.notes %></p>
 </table>
 
 <br>

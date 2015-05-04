@@ -5,67 +5,66 @@
   <%= @workout.workout_name %>
 </h1>
 
-<div class="activity-list">
-	<% @workout.getWorkoutActivities.each do |workout_activity| %>
-	<div>
-		<div class="dib">
-			<h3>Activity</h3>
-			<%= workout_activity.getActivityName %>
-			<!-- TODO: fix this, find how out how pass in global variables within for loop to get activity name to appear -->
-			<!-- So close, and yet, so far -->
-			<!-- Currently showing activity_id -->
-		</div>
-		<div class="dib">
-			<h3>Sets</h3>
-			<% if workout_activity.sets %>
-				<span class="data"><%= workout_activity.sets %></span>
-			<% else %>
-				<span class="no-data">N/A</span>
-			<% end %>
-		</div>
-		<div class="dib">
-			<h3>Reps</h3>
-			<% if workout_activity.reps %>
-				<span class="data"><%= workout_activity.reps %></span>
-			<% else %>
-				<span class="no-data">N/A</span>
-			<% end %>
-		</div>
-		<div class="dib">
-			<h3>Weight (lbs)</h3>
-			<% if workout_activity.weight %>
-				<span class="data"><%= workout_activity.weight %></span>
-			<% else %>
-				<span class="no-data">N/A</span>
-			<% end %>
-		</div>
-		<div class="dib">
-			<h3>Distance (km)</h3>
-			<% if workout_activity.distance %>
-				<span class="data"><%= workout_activity.distance %></span>
-			<% else %>
-				<span class="no-data">N/A</span>
-			<% end %>
-		</div>
-		<div class="dib">
-			<h3>Time (minutes)</h3>
-			<% if workout_activity.time %>
-				<span class="data"><%= workout_activity.time %></span>
-			<% else %>
-				<span class="no-data">N/A</span>
-			<% end %>
-		</div>
-	</div>
-	<% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Sets</th>
+      <th>Weight (lbs)</th>
+      <th>Distance (km)</th>
+      <th>Time (minutes)</th>
+      <th>Edit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workout.getWorkoutActivities.each do |workout_activity| %>
+      <tr>
+        <td><%= workout_activity.getActivityName %></td>
+        <% if workout_activity.sets %>
+	        <td><%= workout_activity.sets %></td>
+        <% else %>
+        	<td class="no-data">N/A</td>
+        <% end %>
+
+        <% if workout_activity.reps %>
+	        <td><%= workout_activity.reps %></td>
+        <% else %>
+        	<td class="no-data">N/A</td>
+        <% end %>
+
+        <% if workout_activity.weight %>
+        	<td class="data"><%= workout_activity.weight %></td>
+        <% else %>
+        	<td class="no-data">N/A</td>
+        <% end %>
+
+        <% if workout_activity.distance %>
+        	<td class="data"><%= workout_activity.distance %></td>
+        <% else %>
+        	<td class="no-data">N/A</td>
+        <% end %>
+
+        <% if workout_activity.time %>
+        	<td class="data"><%= workout_activity.time %></td>
+        <% else %>
+        	<td class="no-data">N/A</td>
+        <% end %>
+
+        <td><%= link_to "Edit", edit_workout_path(@workout) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <p>
   <strong>Notes:</strong>
   <%= @workout.notes %>
 </p>
 
-<%= link_to 'Edit', edit_workout_path(@workout) %> |
-<%= link_to 'Back', workouts_path %>
-<%= link_to 'Add an activity to this workout', new_workout_activity_path(workout_id: @workout.id) %>
+<%= link_to 'Edit', edit_workout_path(@workout), :class => 'btn' %>
+<%= link_to 'Back', workouts_path, :class => 'btn' %>
+<%= link_to 'Add another activity to this workout', new_workout_activity_path(workout_id: @workout.id), :class => 'btn btn-default' %>
 <!-- The above line passes in the id of the current workout as workout_id to the next page (meaning the workout_activities#new_form) -->
 <!-- TODO: fix above path (nested routing?) to link to something like workout_activity/workoutId/new -->

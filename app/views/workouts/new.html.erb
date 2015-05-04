@@ -1,10 +1,10 @@
+<%= link_to 'Go Back', workouts_path, class: 'btn btn-right' %>
+
 
 <div class="form">
-  <%= link_to 'Back', workouts_path, class: '' %>
-
-  <h2>New Workout</h2>
+  <h2>You're killing it <%= current_user.first_name %>! Keep up the great work!</h2>
+  <h2>Create a New Workout</h2>
   <%= render 'form' %>
-
 </div>
 
 

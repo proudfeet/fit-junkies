@@ -30,26 +30,33 @@
         <%= fwa.label :sets, "Sets" %>
         <%= fwa.text_field :sets %>
       </div>
+
       <div class="field" id="workout_reps">
         <%= fwa.label :reps, "Reps" %>
         <%= fwa.text_field :reps %>
       </div>
       <div class="field" id="workout_sets">
-        <%= fwa.label :weight, "Weight" %>
+        <%= fwa.label :weight, "Weight (lbs)" %>
         <%= fwa.text_field :weight %>
       </div>
       <div class="field">
-        <%= fwa.label :distance, "distance" %>
+        <%= fwa.label :distance, "Distance (km)" %>
         <%= fwa.text_field :distance %>
       </div>
       <div class="field">
-        <%= fwa.label :time, "time" %>
+        <%= fwa.label :time, "Time (minutes)" %>
         <%= fwa.text_field :time %>
       </div>
     </div>
   <% end %>
 
-  <a href="javascript:void(0);" id="new-activity-link">Add new activity</a>
+  <a href="javascript:void(0);" class="btn btn-collapse" id="new-activity-link">Add an activity to your workout
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="18 53.5 893 893" enable-background="new 18 53.5 893 893" xml:space="preserve">
+    <path d="M464.5,53.5c123,0,228.167,43.667,315.5,131S911,377,911,500s-43.667,228.167-131,315.5s-192.5,131-315.5,131
+      s-228.167-43.667-315.5-131S18,623,18,500s43.667-228.167,131-315.5S341.5,53.5,464.5,53.5z M688,555.5v-112H521v-167H409v167H241
+      v112h168v168h112v-168H688z"/>
+    </svg>
+  </a>
 
 
   <div class="field">
@@ -71,12 +78,12 @@ $(document).ready(function(){
   "<div class='form-select'>"+
   "<select name='workout[workout_activities_attributes]["+activityNum+"][activity_id]' "+
   "id='workout_workout_activities_attributes_"+activityNum+"_activity_id'><option value='></option>"+
-  "<option value='8'>bench press</option>"+
-  "<option value='9'>running</option>"+
-  "<option value='10'>squat</option>"+
-  "<option value='11'>deadlift</option>"+
-  "<option value='12'>cycling</option>"+
-  "<option value='13'>swimming</option></select>"+
+  "<option value='8'>Bench Press</option>"+
+  "<option value='9'>Running</option>"+
+  "<option value='10'>Squat</option>"+
+  "<option value='11'>Deadlift</option>"+
+  "<option value='12'>Cycling</option>"+
+  "<option value='13'>Swimming</option></select>"+
   "</div>"+
   "</div>"+
 
