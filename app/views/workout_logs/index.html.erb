@@ -12,8 +12,8 @@
   <tbody>
     <% @workout_logs.each do |workout_log| %>
       <tr>
-        <td><%= workout_log.updated_at %></td>
-        <td><%= workout_log.workout %></td>
+        <td><%= workout_log.updated_at.strftime("%b %d, %Y") %></td>
+        <td><%= workout_log.workout.workout_name %></td>
       </tr>
       <tr>
         <td><%= link_to 'Show', workout_log %></td>

@@ -20,12 +20,7 @@
     <% @entries.each do |entry| %>
       <tr>
         <td>
-          <% if entry.created_at != entry.updated_at %>
-            <%= entry.updated_at %>
-            <!-- TODO: format timestamps for created_at and updated_at -->
-          <% else %>
-            <%= entry.created_at %>
-          <% end %>
+            <%= entry.updated_at.strftime("%b %d, %Y") %>
         </td>
         <td><%= entry.weight %></td>
         <td><%= entry.thigh %></td>
