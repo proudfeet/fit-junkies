@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   # has_many :activities
   has_many :activities, through: :workout_activities
-  has_many :workouts
+  has_many :workouts, through: :workout_activities
   # has_many :workouts
   has_many :workout_activities
 
