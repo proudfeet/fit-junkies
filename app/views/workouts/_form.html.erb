@@ -35,15 +35,15 @@
         <%= fwa.label :reps, "Reps" %>
         <%= fwa.text_field :reps %>
       </div>
-      <div class="field" id="workout_sets">
+      <div class="field" id="workout_weight">
         <%= fwa.label :weight, "Weight (lbs)" %>
         <%= fwa.text_field :weight %>
       </div>
-      <div class="field">
+      <div class="field" id="workout_distance">
         <%= fwa.label :distance, "Distance (km)" %>
         <%= fwa.text_field :distance %>
       </div>
-      <div class="field">
+      <div class="field" id="workout_time">
         <%= fwa.label :time, "Time (minutes)" %>
         <%= fwa.text_field :time %>
       </div>
@@ -71,65 +71,21 @@
 <script>
 $(document).ready(function(){
   var activityNum = 1;
-    function addNewActivity(){
-    var newActivity = "<div class='form-section collapsing-content out collapse in' id='activity-"+ activityNum +"'>"+
-  "<div class='field'>"+
-  "<label for='workout_workout_activities_attributes_"+activityNum+"_name'>Activity Name</label><br>"+
-  "<div class='form-select'>"+
-  "<select name='workout[workout_activities_attributes]["+activityNum+"][activity_id]' "+
-  "id='workout_workout_activities_attributes_"+activityNum+"_activity_id'><option value='></option>"+
-  "<option value></option>"+
-  "<option value='1'>Angry Gorilla Bounce</option>"+
-  "<option value='2'>Push Press with DB’s</option>"+
-  "<option value='3'>Suicides</option>"+
-  "<option value='4'>Slurpees</option>"+
-  "<option value='5'>Single arm kettle bell swings</option>"+
-  "<option value='6'>Stationary Bike</option>"+
-  "<option value='7'>Walking Lunge</option>"+
-  "<option value='8'>Running</option>"+
-  "<option value='9'>Suicides</option>"+
-  "<option value='10'>Ball Slams</option>"+
-  "<option value='11'>Kettle Bell Swings</option>"+
-  "<option value='12'>Pepper Punches</option>"+
-  "<option value='13'>Ring PushUps/Ring Planks</option>"+
-  "<option value='14'>Spin Class</option></select>"+
-  "</div>"+
-  "</div>"+
 
-  "<div class='field' id='workout_sets'>"+
-  "<label for='workout_workout_activities_attributes_"+activityNum+"_sets'>Sets</label>"+
-  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][sets]' "+
-  "id='workout_workout_activities_attributes_"+activityNum+"_sets'>"+
-  "</div>"+
-  "<div class='field' id='workout_reps'>"+
-  "<label for='workout_workout_activities_attributes_"+activityNum+"_reps'>Reps</label>"+
-  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][reps]' "+
-  "id='workout_workout_activities_attributes_"+activityNum+"_reps'>"+
-  "</div>"+
-  "<div class='field' id='workout_sets'>"+
-  "<label for='workout_workout_activities_attributes_"+activityNum+"_weight'>Weight</label>"+
-  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][weight]' "+
-  "id='workout_workout_activities_attributes_"+activityNum+"_weight'>"+
-  "</div>"+
-  "<div class='field'>"+
-  "<label for='workout_workout_activities_attributes_"+activityNum+"_distance'>distance</label>"+
-  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][distance]' "+
-  "id='workout_workout_activities_attributes_"+activityNum+"_distance'>"+
-  "</div>"+
-  "<div class='field'>"+
-  "<label for='workout_workout_activities_attributes_"+activityNum+"_time'>time</label>"+
-  "<input type='text' name='workout[workout_activities_attributes]["+activityNum+"][time]' "+
-  "id='workout_workout_activities_attributes_"+activityNum+"_time'>"+
-  "</div>"+
-  "</div>";
-  activityNum++;
-  console.log(newActivity);
-  $('#new-activity-link').before(newActivity);
-};
-$("#new-activity-link").click(function(){
-  console.log('hello');
-  addNewActivity();
-});
+  function addNewActivity(){
+    var newActivity = jQuery("#activity-0").html();
+    var patternOne = /_0_/gi;
+    var patternTwo = /[0]/gi;
+    newActivity = newActivity.replace(patternOne, "_" + activityNum + "_");
+    newActivity = newActivity.replace(patternTwo, activityNum);
+
+    activityNum++;
+    $('.form-section').append(newActivity);
+  };
+
+  $("#new-activity-link").click(function(){
+    addNewActivity();
+  });
 });
 
 </script>
