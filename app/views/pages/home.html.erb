@@ -36,8 +36,13 @@
       <h3>We do one thing. <br>Track your progress.</h3>
       <p>Our focus is to allow you to easily track your workouts while you’re at the gym. No more spread sheets or notebooks. We have the best mobile app in the market.</p>
       <div class="visible-xs">
+      <% if user_signed_in? %>
+        <%= link_to "Create an Activity", new_activity_path, :class => 'btn btn-default btn-full' %>
+        <%= link_to "Create Workout", new_workout_path, :class => 'btn btn-right btn-full' %>
+      <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-default'  %>
         <%= link_to "Login", new_user_session_path, :class => 'btn btn-right'  %>
+      <% end %>
       </div>
     </div>
   </div>

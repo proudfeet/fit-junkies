@@ -84,3 +84,10 @@ button {
     max-width: 20px;
   }
 }
+
+.btn-full {
+  @include media($tablet) {
+    display: block;
+    width: 100%;
+  }
+}
