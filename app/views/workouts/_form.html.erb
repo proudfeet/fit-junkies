@@ -73,14 +73,15 @@ $(document).ready(function(){
   var activityNum = 1;
 
   function addNewActivity(){
-    var newActivity = jQuery("#activity-0").html();
+    var newActivity = "<div class='form-section' id='activity-"+ activityNum +"'>" + jQuery("#activity-0").html() + "</div>";
     var patternOne = /_0_/gi;
     var patternTwo = /[0]/gi;
     newActivity = newActivity.replace(patternOne, "_" + activityNum + "_");
     newActivity = newActivity.replace(patternTwo, activityNum);
+    console.log(newActivity);
 
     activityNum++;
-    $('.form-section').append(newActivity);
+    $('.form-section').after(newActivity);
   };
 
   $("#new-activity-link").click(function(){
