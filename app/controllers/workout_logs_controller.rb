@@ -4,7 +4,7 @@ class WorkoutLogsController < ApplicationController
   # GET /workout_logs
   # GET /workout_logs.json
   def index
-    @workout_logs = WorkoutLog.all
+    @workout_logs = WorkoutLog.where(user_id: current_user).all
   end
 
   # GET /workout_logs/1
@@ -14,7 +14,7 @@ class WorkoutLogsController < ApplicationController
 
   # GET /workout_logs/new
   def new
-    @workout_log = WorkoutLog.new
+    @workout_log = WorkoutLog.where(user_id: current_user).new
     @workouts = Workout.all
   end
 
@@ -25,7 +25,7 @@ class WorkoutLogsController < ApplicationController
   # POST /workout_logs
   # POST /workout_logs.json
   def create
-    @workout_log = WorkoutLog.new(params[:workout_log][:workout_id])
+    @workout_log = WorkoutLog.where(user_id: current_user).new(params[:workout_log][:workout_id])
 
     respond_to do |format|
       if @workout_log.save

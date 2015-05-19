@@ -16,6 +16,11 @@
     <%= f.text_field :workout_name %>
   </div>
 
+  <div class="field">
+    <%= f.label :focus, "Workout Focus" %>
+    <%= f.text_field :focus %>
+  </div>
+
   <!-- TODO: If workout activities doesn't exist add link add an activity -->
   <%= f.fields_for :workout_activities do |fwa| %>
     <div class="form-section" id="activity-<%= fwa.index %>">

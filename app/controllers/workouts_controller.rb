@@ -7,7 +7,7 @@ class WorkoutsController < ApplicationController
   def index
     # @workouts = Workout.current_user.all
     # @workouts = Workout.where(user: => current_user).all
-    @workouts = Workout.where(:user_id => current_user.id).all
+    @workouts = Workout.where(user_id: current_user).all
     # @workouts = current_user.workouts
   end
 
@@ -19,7 +19,7 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts/new
   def new
-    @workout = Workout.new
+    @workout = Workout.where(user_id: current_user).new
 
     @workout.workout_activities.new
     # @workout.activities.build # create a new activity on the workout
@@ -48,7 +48,7 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
-    @workout = Workout.new(workout_params)
+    @workout = Workout.where(user_id: current_user).new(workout_params)
     # binding.pry
     respond_to do |format|
       if @workout.save
@@ -65,7 +65,7 @@ class WorkoutsController < ApplicationController
   # PATCH/PUT /workouts/1.json
   def update
     respond_to do |format|
-      if @workout.update(workout_params)
+      if @workout.where(user_id: current_user).update(workout_params)
         format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
         format.json { render :show, status: :ok, location: @workout }
       else
@@ -78,7 +78,7 @@ class WorkoutsController < ApplicationController
   # DELETE /workouts/1
   # DELETE /workouts/1.json
   def destroy
-    @workout.destroy
+    @workout.where(user_id: current_user).destroy
     respond_to do |format|
       format.html { redirect_to workouts_url, notice: 'Workout was successfully destroyed.' }
       format.json { head :no_content }
