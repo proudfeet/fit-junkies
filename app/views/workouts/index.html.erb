@@ -15,19 +15,21 @@
 
   <tbody>
     <% @workouts.each do |workout| %>
-      <tr>
-        <td><%= workout.workout_name %>
-        <td><%= workout.notes %></td>
-          <td>
-            <% workout.workout_activities.each do |wa| %>
-              <%= wa.name %><br>
-            <% end %>
-          <td>
-        </td>
-        <td class="hidden-xs"><%= link_to 'Details', workout %></td>
-        <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
-        <td class="hidden-xs"><%= link_to 'Remove', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if workout.user_id == current_user.id %>
+        <tr>
+          <td><%= workout.workout_name %>
+          <td><%= workout.notes %></td>
+            <td>
+              <% workout.workout_activities.each do |wa| %>
+                <%= wa.name %><br>
+              <% end %>
+            <td>
+          </td>
+          <td class="hidden-xs"><%= link_to 'Details', workout %></td>
+          <td class="hidden-xs"><%= link_to 'Edit', edit_workout_path(workout) %></td>
+          <td class="hidden-xs"><%= link_to 'Remove', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
 
     <% end %>
   </tbody>

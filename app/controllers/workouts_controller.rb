@@ -1,10 +1,14 @@
 class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
+  # scope_to :current_user
 
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = Workout.all
+    # @workouts = Workout.current_user.all
+    # @workouts = Workout.where(user: => current_user).all
+    @workouts = Workout.where(:user_id => current_user.id).all
+    # @workouts = current_user.workouts
   end
 
   # GET /workouts/1
