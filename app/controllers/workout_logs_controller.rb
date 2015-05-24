@@ -22,6 +22,8 @@ class WorkoutLogsController < ApplicationController
 
   # GET /workout_logs/1/edit
   def edit
+    @workouts = WorkoutLog.where(user_id: current_user.id).all
+    # raise 'hell'
   end
 
   # POST /workout_logs
@@ -31,7 +33,7 @@ class WorkoutLogsController < ApplicationController
 
     respond_to do |format|
       if @workout_log.save
-        format.html { redirect_to @workout_log, notice: 'Workout log was successfully created.' }
+        format.html { redirect_to @workout_log, notice: "Great! We've logged your workout for you!" }
         format.json { render :show, status: :created, location: @workout_log }
       else
         format.html { render :new }
