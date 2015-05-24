@@ -12,7 +12,8 @@
     <ul class="nav collapse" id="navbar-collapse">
       <li class=""><%= link_to "Workouts", workouts_path %></li>
       <% if user_signed_in? %>
-        <li class=""><%= link_to "New Activity", new_activity_path %></li>
+        <li><%= link_to "Workout Log", workout_logs_path %></li>
+        <li><%= link_to "New Activity", new_activity_path %></li>
         <li>
           <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %>
         </li>

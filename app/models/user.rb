@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :workouts, through: :workout_activities
   # has_many :workouts
   has_many :workout_activities
+  has_many :workout_logs
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
