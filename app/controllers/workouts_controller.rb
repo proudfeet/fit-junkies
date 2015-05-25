@@ -65,7 +65,10 @@ class WorkoutsController < ApplicationController
   # PATCH/PUT /workouts/1.json
   def update
     respond_to do |format|
-      if @workout.where(user_id: current_user).update(workout_params)
+      if @workout.update(workout_name: workout_params[:workout_name], notes: workout_params[:notes], focus: workout_params[:focus])
+        @workout.workout_activities.each_with_index do |activity, index|
+          @workout.workout_activities[index].update(workout_params[:workout_activities_attributes][index.to_s])
+        end 
         format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
         format.json { render :show, status: :ok, location: @workout }
       else
