@@ -12,12 +12,12 @@
     <ul class="nav collapse" id="navbar-collapse">
       <li class=""><%= link_to "Workouts", workouts_path %></li>
       <% if user_signed_in? %>
-        <li><%= link_to "Workout Log", workout_logs_path %></li>
+        <li><%= link_to "Workout Diary", workout_logs_path %></li>
         <li><%= link_to "New Activity", new_activity_path %></li>
         <li>
           <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %>
         </li>
-        <li><%= link_to "Personal Attributes Log", entries_path %></li>
+        <li><%= link_to "Progress Diary", entries_path %></li>
         <!-- <li class="logged-in">Logged in as <strong><%= current_user.email %></strong></li> -->
       <% else %>
         <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
