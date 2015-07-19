@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
   	@activities = Activity.all
+    raise 'hell'
   end
 
   def new
@@ -9,7 +10,6 @@ class ActivitiesController < ApplicationController
 
   def create
   	@activity = Activity.new(activity_params)
-
   	if @activity.save
   		redirect_to '/activities'
   	else
